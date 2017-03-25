@@ -1,0 +1,371 @@
+% ===========================================================================
+% ====================   VTMBOGEN.STY 1996/10/13 GZ    ======================
+% ===========================================================================
+% ========= Brought to you by Stayka deyAvemta (stayka@stayka.de) ===========
+% ===========================================================================
+%
+\typeout{Document Substyle `vtmbogen', <13 Octobre 96>.}
+\typeout{Designed by Stayka deyAvemta}
+%
+% ===========================================================================
+%
+% Die Offsets muessen eventuell angepasst werden! Diese hier sind fuer 
+% Linux mit /usr/local/bin/dvidesk -S120 -x1.17in -y1.57in angelegt.
+%
+\voffset-1.57in
+\hoffset-1.17in
+%
+% ===========================================================================
+%
+\textwidth17cm
+\textheight27cm
+\topmargin0.7cm
+\oddsidemargin2cm
+%
+\parindent0pt
+\parskip0pt
+\pagestyle{empty}
+%
+% ===========================================================================
+%
+% Definitionen fuer die Punkte von Null bis Fuenf
+%
+\def\nullpkt{\parbox{1.7cm}{\Large$\circ\circ\circ\circ\circ$}}
+\def\einpkt{\parbox{1.7cm}{\Large$\bullet\circ\circ\circ\circ$}}
+\def\zweipkt{\parbox{1.7cm}{\Large$\bullet\bullet\circ\circ\circ$}}
+\def\dreipkt{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\circ\circ$}}
+\def\vierpkt{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\bullet\circ$}}
+\def\fuenfpkt{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\bullet\bullet$}}
+\def\sechspkt{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\bullet\bullet\bullet$}}
+%
+% Menschlichkeit - Punkte von Null bis Zehn
+%
+\def\mnull{\parbox{3.7cm}{{\Large$\circ\circ\circ\circ\circ\circ\circ\circ\circ\,\circ$}}}
+\def\meins{\parbox{3.7cm}{{\Large$\bullet\circ\circ\circ\circ\circ\circ\circ\circ\,\circ$}}}
+\def\mzwei{\parbox{3.7cm}{{\Large$\bullet\bullet\circ\circ\circ\circ\circ\circ\circ\,\circ$}}}
+\def\mdrei{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\circ\circ\circ\circ\circ\circ\,\circ$}}}
+\def\mvier{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\circ\circ\circ\circ\circ\,\circ$}}}
+\def\mfuenf{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\circ\circ\circ\circ\,\circ$}}}
+\def\msechs{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\circ\circ\circ\,\circ$}}}
+\def\msieben{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\circ\circ\,\circ$}}}
+\def\macht{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\circ\,\circ$}}}
+\def\mneun{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\,\circ$}}}
+\def\mzehn{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\,\bullet$}}}
+%
+% Willenskraft - Punkte von Null bis Zehn
+%
+\def\wnull{\parbox{3.7cm}{{\Large$\circ\circ\circ\circ\circ\circ\circ\circ\circ\,\circ$}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}}
+\def\weins{\parbox{3.7cm}{{\Large$\bullet\circ\circ\circ\circ\circ\circ\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wzwei{\parbox{3.7cm}{{\Large$\bullet\bullet\circ\circ\circ\circ\circ\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wdrei{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\circ\circ\circ\circ\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wvier{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\circ\circ\circ\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wfuenf{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\circ\circ\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wsechs{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\circ\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wsieben{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\circ\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wacht{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\circ\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wneun{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\,\circ$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+\def\wzehn{\parbox{3.7cm}{{\Large$\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\bullet\,\bullet$}}\\[-0.3ex]
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}
+%
+% Blutvorat der Ahnen (max. 40 Punkte)
+%
+\def\blutvorrat{
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\\
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\\
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\\
+\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}
+}
+% ===========================================================================
+%
+% Generelle Definitionen fuer die einzelnen Features 
+% 
+\def\charintro#1{\parbox{5.4cm}{\bf{}#1: \mbox{}\vphantom{Xg}\dotfill\mbox{}}}
+\def\charinfo#1#2{\parbox{5.4cm}{\bf{}#1: \vphantom{Xg}#2}}
+%
+\def\feature#1{\parbox{3.6cm}{#1 \mbox{}\vphantom{Xg}\dotfill\mbox{}}}
+\def\nofeature{\parbox{3.6cm}{\mbox{}\vphantom{Xg}\dotfill\mbox{}}{\Large$\circ\circ\circ\circ\circ$}}
+%
+\def\ritual#1#2{\parbox{7.3cm}{\small{}#1.\ Stufe: #2\vphantom{Xg}}}
+\def\rituals#1#2{\parbox{7.3cm}{\small{}Level #1: #2\vphantom{Xg}}}
+%
+\def\vorzug#1#2{\parbox{7.5cm}{\small{}Vorzug: #1 \vphantom{Xg}\hfill #2\,P}}
+\def\merit#1#2{\parbox{7.5cm}{\small{}Merit: #1 \vphantom{Xg}\hfill #2\,P}}
+%
+\def\fehler#1#2{\parbox{7.5cm}{\small{}Fehler: #1 \vphantom{Xg}\hfill #2\,P}}
+\def\flaw#1#2{\parbox{7.5cm}{\small{}Flaw: #1 \vphantom{Xg}\hfill #2\,P}}
+%
+\def\pathleer#1#2{\parbox{3.7cm}{#1#2\mbox{}\dotfill\mbox{}}}
+\def\path#1#2{\parbox{3.7cm}{#1 #2}}
+%
+\def\roadleer#1#2{\parbox{3.7cm}{#1#2\mbox{}\dotfill\mbox{}}}
+\def\road#1#2{\parbox{3.7cm}{#1 #2}}
+%
+\def\leerzeile{\parbox{7.5cm}{\mbox{}\vphantom{Xg}\dotfill\mbox{}}}
+\def\kaestchen{\raisebox{0.4ex}{\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}}
+%
+% ===========================================================================
+%
+% Definitionen der Attribute, Faehigkeiten etc.
+%
+\def\charactername#1#2{
+\begin{center}
+\parbox{10cm}{\center
+\huge\bf{}#1\\[0.6ex]
+#2
+}
+\end{center}
+}
+% ---------------------------------------------------------------------------
+%
+\def\characterintro#1{
+\begin{minipage}{5.5cm}
+#1
+\end{minipage}}
+%
+% ---------------------------------------------------------------------------
+%
+\def\attributes#1#2{
+\begin{minipage}{5.5cm}
+\begin{center}{\large\bf #1}\end{center}
+
+\vspace{-2ex}
+#2
+\end{minipage}}
+% ---------------------------------------------------------------------------
+%
+\def\abilities#1#2{
+\begin{minipage}{5.5cm}
+\begin{center}{\large\bf #1}\end{center}
+
+\vspace{-2ex}
+#2
+\end{minipage}}
+%
+% ---------------------------------------------------------------------------
+%
+\def\advantages#1#2{
+\begin{minipage}{5.5cm}
+\begin{center}{\large\bf #1}\end{center}
+
+\vspace{-2ex}
+#2
+\end{minipage}}
+%
+% ---------------------------------------------------------------------------
+%
+\def\otherstuff#1#2{
+\begin{minipage}{7.7cm}
+\begin{center}{\large\bf #1}\end{center}
+
+\vspace{-1ex}
+#2
+\end{minipage}}
+%
+\def\krempel#1#2#3{
+\begin{minipage}{4cm}
+\parbox{3.8cm}{\bf #1}\\[4ex]
+\parbox{3.8cm}{\bf #2}\\[4ex]
+\parbox{3.8cm}{\bf #3}
+\end{minipage}}
+% 
+% ---------------------------------------------------------------------------
+%
+\def\gesundheit{
+\begin{minipage}{4.5cm}
+\begin{center}{\large\bf Gesundheit}
+
+\vspace{1ex}
+\begin{tabular}{l@{ \ }r@{ \ }l}
+Blaue Flecken & & \kaestchen\\
+Verletzt: & --1 & \kaestchen\\
+Schwer verletzt: & --1 & \kaestchen\\
+Verwundet: & --2 & \kaestchen\\
+Schwer verwundet: & --2 & \kaestchen\\
+Verkr\"uppelt: & --5 & \kaestchen\\
+Au\ss{}er Gefecht & & \kaestchen\\[3ex]
+%
+\multicolumn{3}{c}{\large\bf{}Erfahrung}\\[1ex]
+\hline
+\multicolumn{3}{|c|}{~}\\
+\multicolumn{3}{|c|}{~}\\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+}
+% 
+% ---------------------------------------------------------------------------
+%
+\def\health{
+\begin{minipage}{4.5cm}
+\begin{center}{\large\bf Health}
+
+\vspace{1ex}
+\begin{tabular}{l@{ \ }r@{ \ }l}
+Bruised & & \kaestchen\\
+Hurt & --1 & \kaestchen\\
+Injured & --1 & \kaestchen\\
+Wounded & --2 & \kaestchen\\
+Mauled & --2 & \kaestchen\\
+Crippled & --5 & \kaestchen\\
+Incapacitated & & \kaestchen\\[3ex]
+%
+\multicolumn{3}{c}{\large\bf{}Experience}\\[1ex]
+\hline
+\multicolumn{3}{|c|}{~}\\
+\multicolumn{3}{|c|}{~}\\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+}
+% 
+% ---------------------------------------------------------------------------
+%
+\def\gesundheitexp#1{
+\begin{minipage}{4.5cm}
+\begin{center}{\large\bf Gesundheit}
+
+\vspace{1ex}
+\begin{tabular}{l@{ \ }r@{ \ }l}
+Blaue Flecken & & \kaestchen\\
+Verletzt: & --1 & \kaestchen\\
+Schwer verletzt: & --1 & \kaestchen\\
+Verwundet: & --2 & \kaestchen\\
+Schwer verwundet: & --2 & \kaestchen\\
+Verkr\"uppelt: & --5 & \kaestchen\\
+Au\ss{}er Gefecht & & \kaestchen\\[3ex]
+%
+\multicolumn{3}{c}{\large\bf{}Erfahrung}\\[1ex]
+\hline
+\multicolumn{3}{|c|}{~}\\[-1.5ex]
+\multicolumn{3}{|c|}{\Large\bfseries \ #1\hspace*{\fill}}\\[-1.5ex]
+\multicolumn{3}{|c|}{~}\\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+}
+% 
+% ---------------------------------------------------------------------------
+%
+\def\healthexp#1{
+\begin{minipage}{4.5cm}
+\begin{center}{\large\bf Health}
+
+\vspace{1ex}
+\begin{tabular}{l@{ \ }r@{ \ }l}
+Bruised & & \kaestchen\\
+Hurt & --1 & \kaestchen\\
+Injured & --1 & \kaestchen\\
+Wounded & --2 & \kaestchen\\
+Mauled & --2 & \kaestchen\\
+Crippled & --5 & \kaestchen\\
+Incapacitated & & \kaestchen\\[3ex]
+%
+\multicolumn{3}{c}{\large\bf{}Experience}\\[1ex]
+\hline
+\multicolumn{3}{|c|}{~}\\[-1.5ex]
+\multicolumn{3}{|c|}{\Large\bfseries \ #1\hspace*{\fill}}\\[-1.5ex]
+\multicolumn{3}{|c|}{~}\\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+}
+% 
+% ---------------------------------------------------------------------------
+\def\vampirpunkte{
+
+\vfill
+{\footnotesize Attribute: 7/5/3 $\star$ F\"ahigkeiten: 13/9/5 $\star$
+Disziplinen: 3 $\star$ Hintergrund: 5 $\star$ Tugenden: 7 $\star$ Freie
+Zusatzpunkte: 15 (7/5/2/1)}
+}
+%
+\def\vampirepoints{
+
+\vfill
+{\footnotesize Attributs: 7/5/3 $\star$ Abilities: 13/9/5 $\star$
+Disciplines: 3 $\star$ Background: 5 $\star$ Virtues: 7 $\star$  Freebie 
+Points: 15 (7/5/2/1)}
+}
+% 
+% ---------------------------------------------------------------------------
+\def\vdavampirpunkte{
+
+\vfill
+{\footnotesize Attribute: 7/5/3 $\star$ F\"ahigkeiten: 13/9/5 $\star$
+Disziplinen: 4  $\star$ Hintergrund: 5 $\star$ Tugenden: 7 $\star$ Freie
+Zusatzpunkte: 15 (7/5/2/1)}
+}
+%
+\def\vdavampirepoints{
+
+\vfill
+{\footnotesize Attributs: 7/5/3 $\star$ Abilities: 13/9/5 $\star$
+Disciplines: 4 $\star$ Background: 5 $\star$ Virtues: 7 $\star$  Freebie 
+Points: 15 (7/5/2/1)}
+}
+% ---------------------------------------------------------------------------
+\def\sabbatpunkte{
+
+\vfill
+{\footnotesize Attribute: 7/5/3 $\star$ F\"ahigkeiten: 13/9/5 $\star$
+Disziplinen: 4 $\star$ Hintergrund: 0 $\star$ Tugenden: 7 $\star$ Freie
+Zusatzpunkte: 15 (7/5/2/1)}
+}
+%
+\def\sabbatpoints{
+
+\vfill
+{\footnotesize Attributs: 7/5/3 $\star$ Abilities: 13/9/5 $\star$
+Disciplines: 4 $\star$ Background: 0 $\star$ Virtues: 7 $\star$  Freebie 
+Points: 15 (7/5/2/1)}
+}
+% ---------------------------------------------------------------------------
+\def\ahnenpunkte{
+
+\vfill
+{\footnotesize Attribute: 10/7/5 $\star$ F\"ahigkeiten: 20/12/8 $\star$
+Disziplinen: 10 $\star$ Hintergrund: 15 $\star$ Tugenden: 7 $\star$ Freie
+Zusatzpunkte: 20 (7/5/2/1)}
+}
+%
+\def\elderpoints{
+
+\vfill
+{\footnotesize Attributs: 10/7/5 $\star$ Abilities: 20/12/8 $\star$
+Disciplines: 10 $\star$ Background: 15 $\star$ Virtues: 7 $\star$  Freebie 
+Points: 20 (7/5/2/1)}
+}
+% ---------------------------------------------------------------------------
+\def\ghoulpunkte{
+
+\vfill
+{\footnotesize Attribute: 6/4/3 $\star$ F\"ahigkeiten: 11/7/4 $\star$
+Disziplinen: 1 $\star$ Hintergrund: 5 $\star$ Tugenden: 7 $\star$ Freie
+Zusatzpunkte: 8 (7/5/2/1)}
+}
+%
+\def\ghoulpoints{
+
+\vfill
+{\footnotesize Attributes: 6/4/3 $\star$ Abilities: 11/7/4 $\star$
+Disciplines: 1 $\star$ Background: 5 $\star$ Virtues: 7 $\star$ Freebie 
+Points: 8 (7/5/2/1)}
+}
+%
+% ===========================================================================
+%                           ---  eof ---                               
+% ===========================================================================
