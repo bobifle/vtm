@@ -1,0 +1,55 @@
+% Changing book to article will make the footers match on each page,
+% rather than alternate every other.
+%
+% Note that the article class does not have chapters.
+\documentclass[10pt,a4paper,twoside,onecolumn,openany]{book}
+\usepackage[bg-print]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
+%\usepackage[english]{babel}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{musixtex}
+
+\def\Ab{$A^b$}
+\def\As{$A^\#$}
+\def\Bb{$B^b$}
+\def\Bs{$B^\#$}
+\def\Cb{$C^b$}
+\def\Cs{$C^\#$}
+\def\Db{$D^b$}
+\def\Ds{$D^\#$}
+\def\Eb{$E^b$}
+\def\Es{$E^\#$}
+\def\Fb{$F^b$}
+\def\Fs{$F^\#$}
+\def\Gb{$G^b$}
+\def\Gs{$G^\#$}
+
+% Start document
+\begin{document}
+\fontfamily{ppl}\selectfont % Set text font
+
+% Your content goes here
+\chapter{Gammes Majeures}
+\header{C}
+\begin{dndtable}[XXXXXXXXXXXXXX]
+	base      & C   & D   & E   & F   & G   & A   & B   & C   & D   & E   & F   & G   & A   \\
+	gamme     & C   & D   & E   & \Fs & G   & A   & B   & \Cs & D   & E   & F   & G   & A   \\
+	degré     & 1   & 2   & 3   & 4   & 5   & 6   & 7   & 8   & 9   & 10  & 11  & 12  & 13  \\
+	$D^M$     & C   &     & E   &     & G   &     &     &     &     &     &     &     &     \\
+	$D^M7^-$  & C   &     & E   &     &     &     & \Bb &     &     &     &     &     &     \\
+	$D^M7^+$  & C   &     & E   &     &     &     & B   &     &     &     &     &     &     \\
+	$D6$      & C   &     & E   &     &     & A   &     &     &     &     &     &     &  
+\end{dndtable}
+
+\header{D}
+\begin{dndtable}[XXXXXXXXXXXXXX]
+	base      & D   & E   & F   & G   & A   & B   & C   & D   & E   & F   & G   & A   & B   \\
+	gamme     & D   & E   & \Fs & G   & A   & B   & \Cs & D   & E   & F   & G   & A   & B   \\
+	degré     & 1   & 2   & 3   & 4   & 5   & 6   & 7   & 8   & 9   & 10  & 11  & 12  & 13  \\
+	$D^M$     & D   &     & \Fs &     & A   &     &     &     &     &     &     &     &     \\
+	$D^M7^-$  & D   &     & \Fs &     &     &     & C   &     &     &     &     &     &     \\
+	$D^M7^+$  & D   &     & \Fs &     &     &     & \Cs &     &     &     &     &     &     \\
+	$D6$      & D   &     & \Fs &     &     & B   &     &     &     &     &     &     &  
+\end{dndtable}
+
+\end{document}
