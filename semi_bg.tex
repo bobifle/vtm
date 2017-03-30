@@ -3,9 +3,9 @@
 %
 % Note that the article class does not have chapters.
 \documentclass[10pt,a4paper,twoside,twocolumn,openany]{book}
-%\AtBeginDocument{
-  \let\oldhline\hline
-%}
+% we'll need the old hline later
+\let\oldhline\hline
+
 \usepackage[bg-a4]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 %\usepackage[english]{babel}
 \usepackage[francais]{babel}
@@ -45,7 +45,6 @@
 
 \rpgsection{Attributes}
 
-%\vspace{-0.5ex}
 \attributes{Physical}{
 \feature{Strength}\rpgdots{1}{6}{1.7cm}\\
 \feature{Dexterity}\rpgdots{2}{6}{1.7cm}\\
@@ -158,6 +157,10 @@
 \flaw{Sans reflet}{--1}
 \flaw{Weak Aura}{--2}
 \flaw{Alergie a l'ail}{--1}
+\parbox{7.5cm}{\small{} \vphantom{Xg}\hfill }
+\parbox{7.5cm}{\small{} \vphantom{Xg}\hfill }
+\parbox{7.5cm}{\small{} \vphantom{Xg}\hfill }
+\parbox{7.5cm}{\small{} \vphantom{Xg}\hfill }
 }
 \hfill
 \krempel{
@@ -171,30 +174,9 @@ Bloodpool\\[1ex]
 }
 \hfill
 \healthexp{4}
-%\begin{minipage}{4.5cm}
-%\begin{center}{\large\bf Health}
-%\vspace{1ex}
-%\begin{tabular}{l@{ \ }r@{ \ }l}
-%Bruised & & \kaestchen\\
-%Hurt & --1 & \kaestchen\\
-%Injured & --1 & \kaestchen\\
-%Wounded & --2 & \kaestchen\\
-%Mauled & --2 & \kaestchen\\
-%Crippled & --5 & \kaestchen\\
-%Incapacitated & & \kaestchen\\[3ex]
-%
-%\multicolumn{3}{c}{\large\bf{}Experience}\\[3ex]
-%\oldhline\\
-%\multicolumn{3}{|c|}{~}\\[-1.5ex]
-%\multicolumn{3}{|c|}{\Large\bfseries \ 4\hspace*{\fill}}\\[-1.5ex]
-%\multicolumn{3}{|c|}{~}\\
-%\oldhline
-%\end{tabular}
-%\end{center}
-%\end{minipage}
 
-\begin{paperbox}
- point de maturation: 1
+\begin{paperbox}{Misc}
+points de maturation: 1
 \end{paperbox}
 
 \twocolumn
