@@ -6,7 +6,7 @@
 \newcounter{circle}
 \newcounter{totcircle}
 
-%\newcommandx{\rpgdots}[3][2=5, 3=1.7cm]{\setcounter{totcircle}{#2-#1} \parbox{#3}{\Large$\forloop{bullet}{0}{\value{bullet}<#1}{\bullet}\forloop{circle}{0}{\value{circle}<\value{totcircle}}{\circ}$}}
+\def\rpgsection#1{\vspace{1ex}\hline\vspace{-7.8ex}\section{#1}\vspace{-2ex}}
 \newcommandx{\rpgdots}[3]{\setcounter{totcircle}{#2-#1} \parbox{#3}{\Large$\forloop{bullet}{0}{\value{bullet}<#1}{\bullet}\forloop{circle}{0}{\value{circle}<\value{totcircle}}{\circ}$}}
 
 \def\feature#1{\parbox{3.6cm}{#1 \mbox{}\vphantom{Xg}\dotfill\mbox{}}}
@@ -148,85 +148,6 @@
 % 
 % ---------------------------------------------------------------------------
 %
-\def\gesundheit{
-\begin{minipage}{4.5cm}
-\begin{center}{\large\bf Gesundheit}
-
-\vspace{1ex}
-\begin{tabular}{l@{ \ }r@{ \ }l}
-Blaue Flecken & & \kaestchen\\
-Verletzt: & --1 & \kaestchen\\
-Schwer verletzt: & --1 & \kaestchen\\
-Verwundet: & --2 & \kaestchen\\
-Schwer verwundet: & --2 & \kaestchen\\
-Verkr\"uppelt: & --5 & \kaestchen\\
-Au\ss{}er Gefecht & & \kaestchen\\[3ex]
-%
-\multicolumn{3}{c}{\large\bf{}Erfahrung}\\[1ex]
-\hline
-\multicolumn{3}{|c|}{~}\\
-\multicolumn{3}{|c|}{~}\\
-\hline
-\end{tabular}
-\end{center}
-\end{minipage}
-}
-% 
-% ---------------------------------------------------------------------------
-%
-\def\health{
-\begin{minipage}{4.5cm}
-\begin{center}{\large\bf Health}
-
-\vspace{1ex}
-\begin{tabular}{l@{ \ }r@{ \ }l}
-Bruised & & \kaestchen\\
-Hurt & --1 & \kaestchen\\
-Injured & --1 & \kaestchen\\
-Wounded & --2 & \kaestchen\\
-Mauled & --2 & \kaestchen\\
-Crippled & --5 & \kaestchen\\
-Incapacitated & & \kaestchen\\[3ex]
-%
-\multicolumn{3}{c}{\large\bf{}Experience}\\[1ex]
-\hline
-\multicolumn{3}{|c|}{~}\\
-\multicolumn{3}{|c|}{~}\\
-\hline
-\end{tabular}
-\end{center}
-\end{minipage}
-}
-% 
-% ---------------------------------------------------------------------------
-%
-\def\gesundheitexp#1{
-\begin{minipage}{4.5cm}
-\begin{center}{\large\bf Gesundheit}
-
-\vspace{1ex}
-\begin{tabular}{l@{ \ }r@{ \ }l}
-Blaue Flecken & & \kaestchen\\
-Verletzt: & --1 & \kaestchen\\
-Schwer verletzt: & --1 & \kaestchen\\
-Verwundet: & --2 & \kaestchen\\
-Schwer verwundet: & --2 & \kaestchen\\
-Verkr\"uppelt: & --5 & \kaestchen\\
-Au\ss{}er Gefecht & & \kaestchen\\[3ex]
-%
-\multicolumn{3}{c}{\large\bf{}Erfahrung}\\[1ex]
-\hline
-\multicolumn{3}{|c|}{~}\\[-1.5ex]
-\multicolumn{3}{|c|}{\Large\bfseries \ #1\hspace*{\fill}}\\[-1.5ex]
-\multicolumn{3}{|c|}{~}\\
-\hline
-\end{tabular}
-\end{center}
-\end{minipage}
-}
-% 
-% ---------------------------------------------------------------------------
-%
 \def\healthexp#1{
 \begin{minipage}{4.5cm}
 \begin{center}{\large\bf Health}
@@ -241,12 +162,12 @@ Mauled & --2 & \kaestchen\\
 Crippled & --5 & \kaestchen\\
 Incapacitated & & \kaestchen\\[3ex]
 %
-\multicolumn{3}{c}{\large\bf{}Experience}\\[1ex]
-\hline
+\multicolumn{3}{c}{\large\bf{}Experience}\\[1.5ex]
+\oldhline\\[-2.5ex]
 \multicolumn{3}{|c|}{~}\\[-1.5ex]
 \multicolumn{3}{|c|}{\Large\bfseries \ #1\hspace*{\fill}}\\[-1.5ex]
 \multicolumn{3}{|c|}{~}\\
-\hline
+\oldhline
 \end{tabular}
 \end{center}
 \end{minipage}
