@@ -7,178 +7,26 @@
 \newcounter{circle}
 \newcounter{totcircle}
 
-
+((* for shorta, attr in attributes *))
 % ---------------------------------
-% WITS macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charwitcount}% Wits
-
-% the command sets the attribute value
-\newcommand\charwit[1]{
-  \setcounter{charwitcount}{0}
-  \setcounter{charwitcount}{#1}
-}
-
-% set a default
-\charwit{1}
-
-\def\getwit{\value{\charwitcount}}
-
-
-% ---------------------------------
-% INTELLIGENCE macros
+% ((( attr.upper() ))) macros
 % ---------------------------------
 
 % A counter for the attribute
-\newcounter{charintcount}% Intelligence
+\newcounter{char(((shorta)))count}% (((attr)))
 
 % the command sets the attribute value
-\newcommand\charint[1]{
-  \setcounter{charintcount}{0}
-  \setcounter{charintcount}{#1}
+\newcommand\char(((shorta)))[1]{
+  \setcounter{char(((shorta)))count}{0}
+  \setcounter{char(((shorta)))count}{#1}
 }
 
 % set a default
-\charint{1}
+\char(((shorta))){1}
 
-\def\getint{\value{\charintcount}}
+\def\get(((shorta))){\value{\char(((shorta)))count}}
 
-
-% ---------------------------------
-% PERCEPTION macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charpercount}% Perception
-
-% the command sets the attribute value
-\newcommand\charper[1]{
-  \setcounter{charpercount}{0}
-  \setcounter{charpercount}{#1}
-}
-
-% set a default
-\charper{1}
-
-\def\getper{\value{\charpercount}}
-
-
-% ---------------------------------
-% CHARISMA macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charchacount}% Charisma
-
-% the command sets the attribute value
-\newcommand\charcha[1]{
-  \setcounter{charchacount}{0}
-  \setcounter{charchacount}{#1}
-}
-
-% set a default
-\charcha{1}
-
-\def\getcha{\value{\charchacount}}
-
-
-% ---------------------------------
-% APPEARANCE macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charappcount}% Appearance
-
-% the command sets the attribute value
-\newcommand\charapp[1]{
-  \setcounter{charappcount}{0}
-  \setcounter{charappcount}{#1}
-}
-
-% set a default
-\charapp{1}
-
-\def\getapp{\value{\charappcount}}
-
-
-% ---------------------------------
-% MANIPULATION macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charmancount}% Manipulation
-
-% the command sets the attribute value
-\newcommand\charman[1]{
-  \setcounter{charmancount}{0}
-  \setcounter{charmancount}{#1}
-}
-
-% set a default
-\charman{1}
-
-\def\getman{\value{\charmancount}}
-
-
-% ---------------------------------
-% STAMINA macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charstacount}% Stamina
-
-% the command sets the attribute value
-\newcommand\charsta[1]{
-  \setcounter{charstacount}{0}
-  \setcounter{charstacount}{#1}
-}
-
-% set a default
-\charsta{1}
-
-\def\getsta{\value{\charstacount}}
-
-
-% ---------------------------------
-% DEXTERITY macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{chardexcount}% Dexterity
-
-% the command sets the attribute value
-\newcommand\chardex[1]{
-  \setcounter{chardexcount}{0}
-  \setcounter{chardexcount}{#1}
-}
-
-% set a default
-\chardex{1}
-
-\def\getdex{\value{\chardexcount}}
-
-
-% ---------------------------------
-% STRENGTH macros
-% ---------------------------------
-
-% A counter for the attribute
-\newcounter{charstrcount}% Strength
-
-% the command sets the attribute value
-\newcommand\charstr[1]{
-  \setcounter{charstrcount}{0}
-  \setcounter{charstrcount}{#1}
-}
-
-% set a default
-\charstr{1}
-
-\def\getstr{\value{\charstrcount}}
-
-
+((* endfor *))
 
 
 \def\rpgsection#1{\vspace{1ex}\hline\vspace{-7.8ex}\section{#1}\vspace{-2ex}}

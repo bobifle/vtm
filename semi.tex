@@ -12,19 +12,31 @@
 \usepackage[latin1]{inputenc}
 \usepackage{rpg}
 
+
+\charstr{7}
+
+
+
 % Start document
 \begin{document}
 \fontfamily{ppl}\selectfont % Set text font
 
 \onecolumn
+
+\chapter{test}
+
+\noindent\begin{picture}(420,594)
+\put(0,0){\framebox(420,594)}
+\titlebox{0}{500}{28}{STR}{strength}
+\end{picture}
+
 \vspace{-10ex}
 \chapter{Semi}
 \vspace{-4ex}
-%\makebox[0pt][l]{%
+
 \hfill\raisebox{1ex}[0pt][0pt]{%
 	  \includegraphics[scale=0.5]{semi.jpeg}
   }
-%}
 
 \characterintro{
 \charinfo{Clan}{Gangrel}\\[0.3ex]
@@ -47,7 +59,7 @@
 \rpgsection{Attributes}
 
 \attributes{Physical}{
-\feature{Strength}\rpgdots{1}{6}{1.7cm}\\
+\feature{Strength}\rpgdots{\charstr}{6}{1.7cm}\\
 \feature{Dexterity}\rpgdots{2}{6}{1.7cm}\\
 \feature{Stamina}\rpgdots{3}{6}{1.7cm}
 }
