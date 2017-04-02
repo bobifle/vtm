@@ -24,7 +24,7 @@
 % set a default
 \char(((shorta))){1}
 
-\def\get(((shorta))){\value{\char(((shorta)))count}}
+\def\get(((shorta))){\value{char(((shorta)))count}}
 
 ((* endfor *))
 
@@ -214,89 +214,35 @@ Incapacitated & & \kaestchen\\[3ex]
 \end{center}
 \end{minipage}
 }
-% 
-% ---------------------------------------------------------------------------
-\def\vampirpunkte{
 
-\vfill
-{\footnotesize Attribute: 7/5/3 $\star$ F\"ahigkeiten: 13/9/5 $\star$
-Disziplinen: 3 $\star$ Hintergrund: 5 $\star$ Tugenden: 7 $\star$ Freie
-Zusatzpunkte: 15 (7/5/2/1)}
-}
-%
-\def\vampirepoints{
+\def\charsheet{
 
-\vfill
-{\footnotesize Attributs: 7/5/3 $\star$ Abilities: 13/9/5 $\star$
-Disciplines: 3 $\star$ Background: 5 $\star$ Virtues: 7 $\star$  Freebie 
-Points: 15 (7/5/2/1)}
-}
-% 
-% ---------------------------------------------------------------------------
-\def\vdavampirpunkte{
+\onecolumn
 
-\vfill
-{\footnotesize Attribute: 7/5/3 $\star$ F\"ahigkeiten: 13/9/5 $\star$
-Disziplinen: 4  $\star$ Hintergrund: 5 $\star$ Tugenden: 7 $\star$ Freie
-Zusatzpunkte: 15 (7/5/2/1)}
-}
-%
-\def\vdavampirepoints{
+\chapter{(((player.name)))}
 
-\vfill
-{\footnotesize Attributs: 7/5/3 $\star$ Abilities: 13/9/5 $\star$
-Disciplines: 4 $\star$ Background: 5 $\star$ Virtues: 7 $\star$  Freebie 
-Points: 15 (7/5/2/1)}
-}
-% ---------------------------------------------------------------------------
-\def\sabbatpunkte{
+\rpgsection{Attributes}
 
-\vfill
-{\footnotesize Attribute: 7/5/3 $\star$ F\"ahigkeiten: 13/9/5 $\star$
-Disziplinen: 4 $\star$ Hintergrund: 0 $\star$ Tugenden: 7 $\star$ Freie
-Zusatzpunkte: 15 (7/5/2/1)}
+\attributes{Physical}{
+\feature{Strength}\rpgdots{\getstr}{6}{1.7cm}\\
+\feature{Dexterity}\rpgdots{\getdex}{6}{1.7cm}\\
+\feature{Stamina}\rpgdots{\getsta}{6}{1.7cm}
 }
-%
-\def\sabbatpoints{
+\hfill
+\attributes{Social}{
+\feature{Charisma}\rpgdots{\getcha}{6}{1.7cm}\\
+\feature{Manipulation}\rpgdots{\getman}{6}{1.7cm}\\
+\feature{Appearance}\rpgdots{\getapp}{6}{1.7cm}
+}
+\hfill
+\attributes{Mental}{
+\feature{Perception}\rpgdots{\getper}{6}{1.7cm}\\
+\feature{Intelligence}\rpgdots{\getint}{6}{1.7cm}\\
+\feature{Wits}\rpgdots{\getwit}{6}{1.7cm}
+}
 
-\vfill
-{\footnotesize Attributs: 7/5/3 $\star$ Abilities: 13/9/5 $\star$
-Disciplines: 4 $\star$ Background: 0 $\star$ Virtues: 7 $\star$  Freebie 
-Points: 15 (7/5/2/1)}
-}
-% ---------------------------------------------------------------------------
-\def\ahnenpunkte{
+\rpgsection{Abilities}
 
-\vfill
-{\footnotesize Attribute: 10/7/5 $\star$ F\"ahigkeiten: 20/12/8 $\star$
-Disziplinen: 10 $\star$ Hintergrund: 15 $\star$ Tugenden: 7 $\star$ Freie
-Zusatzpunkte: 20 (7/5/2/1)}
-}
-%
-\def\elderpoints{
+\twocolumn
 
-\vfill
-{\footnotesize Attributs: 10/7/5 $\star$ Abilities: 20/12/8 $\star$
-Disciplines: 10 $\star$ Background: 15 $\star$ Virtues: 7 $\star$  Freebie 
-Points: 20 (7/5/2/1)}
-}
-% ---------------------------------------------------------------------------
-\def\ghoulpunkte{
-
-\vfill
-{\footnotesize Attribute: 6/4/3 $\star$ F\"ahigkeiten: 11/7/4 $\star$
-Disziplinen: 1 $\star$ Hintergrund: 5 $\star$ Tugenden: 7 $\star$ Freie
-Zusatzpunkte: 8 (7/5/2/1)}
-}
-%
-\def\ghoulpoints{
-
-\vfill
-{\footnotesize Attributes: 6/4/3 $\star$ Abilities: 11/7/4 $\star$
-Disciplines: 1 $\star$ Background: 5 $\star$ Virtues: 7 $\star$ Freebie 
-Points: 8 (7/5/2/1)}
-}
-%
-% ===========================================================================
-%                           ---  eof ---                               
-% ===========================================================================
+} % end of charsheet

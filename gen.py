@@ -40,8 +40,9 @@ def escape_tex(value):
 	return newval
 
 class Player(object):
-	def __init__(self, name):
-		self.name = None
+	def __init__(self, name, filename):
+		self.name = name
+		self.fname=filename
 
 	@property
 	def attributes(self):
@@ -49,7 +50,22 @@ class Player(object):
 
 	@property
 	def data(self):
-		return {'attributes': [(attr[:3], attr.capitalize()) for attr in self.attributes]}
+		d = {}
+		d['attributes'] = [(attr[:3], attr.capitalize()) for attr in self.attributes]
+		d['player'] = self
+		return d
+
+	def render(self):
+		env=getEnv()
+		package = env.get_template('rpg.template')
+		player = env.get_template('player.template')
+		# First render the package
+		with open('%s.sty' % self.fname, 'w') as f:
+			f.write(package.render(**self.data))
+		# then the player tex file
+		with open('%s.tex' % self.fname, 'w') as f:
+			f.write(player.render(**self.data))
+
 
 def attribute(attr):
 	def decorator(cls):
@@ -71,9 +87,15 @@ class Vampire(Player):
 
 
 if __name__=='__main__':
-	env=getEnv()
-	rpg = env.get_template('rpg.template')
-	semi = Vampire(u'Semi')
-	with open('rpg.sty', 'w') as f:
-		f.write(rpg.render(**semi.data))
+	semi = Vampire(u'Semi', 'jmp')
+	semi.strength = 4
+	semi.dexterity = 5
+	semi.stamina = 3
+	semi.manipulation = 2
+	semi.appearance = 2
+	semi.charisma = 2
+	semi.perception= 1
+	semi.intelligence = 2
+	semi.wits = 2
+	semi.render()
 

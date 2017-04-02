@@ -9,11 +9,20 @@
 \usepackage[bg-a4]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 %\usepackage[english]{babel}
 \usepackage[francais]{babel}
-\usepackage[latin1]{inputenc}
-\usepackage{rpg}
+%\usepackage[latin1]{inputenc}
+\usepackage{semi}
+\usepackage[most]{tcolorbox}
 
 
-\charstr{7}
+\charstr{4}
+\chardex{5}
+\charsta{3}
+\charcha{2}
+\charman{2}
+\charapp{2}
+\charper{1}
+\charint{2}
+\charwit{4}
 
 
 
@@ -23,20 +32,20 @@
 
 \onecolumn
 
-\chapter{test}
+%\chapter{test}
 
-\noindent\begin{picture}(420,594)
-\put(0,0){\framebox(420,594)}
-\titlebox{0}{500}{28}{STR}{strength}
-\end{picture}
+%\noindent\begin{picture}(420,594)
+%\put(0,0){\framebox(420,594)}
+%\titlebox{0}{500}{28}{STR}{strength}
+%\end{picture}
 
 \vspace{-10ex}
 \chapter{Semi}
 \vspace{-4ex}
 
 \hfill\raisebox{1ex}[0pt][0pt]{%
-	  \includegraphics[scale=0.5]{semi.jpeg}
-  }
+	  \tcbox[boxsep=1mm, boxrule=0mm, colframe=black, colback=black,size=fbox]{\includegraphics[scale=0.2]{semi.jpeg}}
+}
 
 \characterintro{
 \charinfo{Clan}{Gangrel}\\[0.3ex]
@@ -59,21 +68,21 @@
 \rpgsection{Attributes}
 
 \attributes{Physical}{
-\feature{Strength}\rpgdots{\charstr}{6}{1.7cm}\\
-\feature{Dexterity}\rpgdots{2}{6}{1.7cm}\\
-\feature{Stamina}\rpgdots{3}{6}{1.7cm}
+\feature{Strength}\rpgdots{\getstr}{6}{1.7cm}\\
+\feature{Dexterity}\rpgdots{\getdex}{6}{1.7cm}\\
+\feature{Stamina}\rpgdots{\getsta}{6}{1.7cm}
 }
 \hfill
 \attributes{Social}{
-\feature{Charisma}\rpgdots{3}{6}{1.7cm}\\
-\feature{Manipulation}\rpgdots{6}{6}{1.7cm}\\
-\feature{Appearance}\rpgdots{5}{6}{1.7cm}
+\feature{Charisma}\rpgdots{\getcha}{6}{1.7cm}\\
+\feature{Manipulation}\rpgdots{\getman}{6}{1.7cm}\\
+\feature{Appearance}\rpgdots{\getapp}{6}{1.7cm}
 }
 \hfill
 \attributes{Mental}{
-\feature{Perception}\rpgdots{3}{6}{1.7cm}\\
-\feature{Intelligence}\rpgdots{3}{6}{1.7cm}\\
-\feature{Wits}\rpgdots{3}{6}{1.7cm}
+\feature{Perception}\rpgdots{\getper}{6}{1.7cm}\\
+\feature{Intelligence}\rpgdots{\getint}{6}{1.7cm}\\
+\feature{Wits}\rpgdots{\getwit}{6}{1.7cm}
 }
 
 \rpgsection{Abilities}

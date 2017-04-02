@@ -1,0 +1,26 @@
+\documentclass[10pt,a4paper,twoside,twocolumn,openany]{book}
+% we'll need the old hline later
+\let\oldhline\hline
+
+\usepackage[bg-a4]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
+%\usepackage[english]{babel}
+\usepackage[francais]{babel}
+\usepackage{(((player.fname)))}
+\usepackage[most]{tcolorbox}
+
+
+\charstr{(((player.strength)))}
+\chardex{(((player.dexterity)))}
+\charsta{(((player.stamina)))}
+\charman{(((player.manipulation)))}
+\charapp{(((player.appearance)))}
+\charcha{(((player.charisma)))}
+\charper{(((player.perception)))}
+\charint{(((player.intelligence)))}
+\charwit{(((player.wits)))}
+
+\begin{document}
+
+\charsheet
+
+\end{document}
