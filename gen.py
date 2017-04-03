@@ -4,6 +4,7 @@
 import jinja2
 import logging
 import re
+from collections import OrderedDict
 
 _LATEX_SUBS = (
 	(re.compile(r'\\'), r'\\textbackslash'),
@@ -84,6 +85,37 @@ def attribute(attr):
 @attribute('wits')
 class Vampire(Player):
 	_attributes = []
+	_talents = ['alertness', 'athletics', 'brawl', 'dodge', 'empathy', 'expression', 'intimidate', 'leadership', 'subterfuge', 'tricks']
+	_skills = ['acting', 'animal', 'archery']
+	_knowledge = ['investigation', 'law']
+
+	@property
+	def talents(self): 
+		# build the list of talents and their value, default to 0 
+		ret = [ (talent, getattr(self, talent, 0)) for talent in sorted(self._talents)]
+		#always return 12 talents, appending empty ones ('', 0), suitable for consitent display
+		ret += [('', 0)]*(12-len(ret))
+		return ret
+
+	@property
+	def skills(self):
+		ret = [ (skill, getattr(self, skill, 0)) for skill in sorted(self._skills)]
+		ret += [('', 0)]*(12-len(ret))
+		return ret
+
+	@property
+	def knowledge(self):
+		ret = [ (knowledge, getattr(self, knowledge, 0)) for knowledge in sorted(self._knowledge)]
+		ret += [('', 0)]*(12-len(ret))
+		return ret
+
+	@property
+	def abilities(self):
+		ret = OrderedDict()
+		ret['Talents'] = self.talents
+		ret['Skills'] = self.skills
+		ret['Knowledge'] = self.knowledge
+		return ret
 
 
 if __name__=='__main__':
@@ -96,6 +128,21 @@ if __name__=='__main__':
 	semi.charisma = 2
 	semi.perception= 1
 	semi.intelligence = 2
-	semi.wits = 2
+	semi.wits = 4
+
+	# talents
+	semi.alertness = 3
+	semi.athletics = 3
+	semi.brawl=3
+	semi.subterfuge=3
+	semi.dodge=1
+
+	# skills
+	semi.acting=1
+
+	# knowledge
+	semi.investigation=2
+
+	# finally, render the latex code
 	semi.render()
 

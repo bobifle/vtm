@@ -223,25 +223,29 @@ Incapacitated & & \kaestchen\\[3ex]
 
 \rpgsection{Attributes}
 
-\attributes{Physical}{
-\feature{Strength}\rpgdots{\getstr}{6}{1.7cm}\\
-\feature{Dexterity}\rpgdots{\getdex}{6}{1.7cm}\\
-\feature{Stamina}\rpgdots{\getsta}{6}{1.7cm}
+((* for cat, attrs in [
+  ('Physical', ['strength', 'dexterity', 'stamina']),
+  ('Social',   ['charisma', 'manipulation', 'appearance']),
+  ('Mental',   ['perception', 'intelligence', 'wits']),
+]-*))
+\attributes{(((cat)))}{
+((*for attr in attrs-*))
+\feature{((( attr.capitalize() )))}\rpgdots{\get(((attr[:3])))}{6}{1.7cm}((*if not loop.last*))\\((*endif*))
+((*endfor-*))
 }
-\hfill
-\attributes{Social}{
-\feature{Charisma}\rpgdots{\getcha}{6}{1.7cm}\\
-\feature{Manipulation}\rpgdots{\getman}{6}{1.7cm}\\
-\feature{Appearance}\rpgdots{\getapp}{6}{1.7cm}
-}
-\hfill
-\attributes{Mental}{
-\feature{Perception}\rpgdots{\getper}{6}{1.7cm}\\
-\feature{Intelligence}\rpgdots{\getint}{6}{1.7cm}\\
-\feature{Wits}\rpgdots{\getwit}{6}{1.7cm}
-}
+((*if not loop.last*))\hfill((*endif*))
+((*endfor*))
 
 \rpgsection{Abilities}
+
+((*for cat, abilities in player.abilities.iteritems()-*))
+\abilities{((( cat )))}{
+((*for talent, value in abilities-*))
+\feature{((( talent.capitalize() )))}\rpgdots{(((value)))}{6}{1.7cm}
+((*-if not loop.last*))\\((*endif*))
+((*endfor-*))
+}
+((*-endfor*))
 
 \twocolumn
 
