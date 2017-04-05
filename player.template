@@ -8,17 +8,6 @@
 \usepackage{(((player.fname)))}
 \usepackage[most]{tcolorbox}
 
-
-\charstr{(((player.strength)))}
-\chardex{(((player.dexterity)))}
-\charsta{(((player.stamina)))}
-\charman{(((player.manipulation)))}
-\charapp{(((player.appearance)))}
-\charcha{(((player.charisma)))}
-\charper{(((player.perception)))}
-\charint{(((player.intelligence)))}
-\charwit{(((player.wits)))}
-
 \begin{document}
 
 \charsheet

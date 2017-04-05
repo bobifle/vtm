@@ -46,15 +46,10 @@ class Player(object):
 		self.fname=filename
 
 	@property
-	def attributes(self):
-		return [attr for attr in self._attributes] # a copy
+	def attributes(self): return [attr for attr in self._attributes] # a copy
 
 	@property
-	def data(self):
-		d = {}
-		d['attributes'] = [(attr[:3], attr.capitalize()) for attr in self.attributes]
-		d['player'] = self
-		return d
+	def data(self): return {'player': self}
 
 	def render(self):
 		env=getEnv()
@@ -67,47 +62,43 @@ class Player(object):
 		with open('%s.tex' % self.fname, 'w') as f:
 			f.write(player.render(**self.data))
 
-
-def attribute(attr):
-	def decorator(cls):
-		cls._attributes.append(attr)
-		return cls
-	return decorator
-
-@attribute('strength')
-@attribute('dexterity')
-@attribute('stamina')
-@attribute('manipulation')
-@attribute('appearance')
-@attribute('charisma')
-@attribute('perception')
-@attribute('intelligence')
-@attribute('wits')
 class Vampire(Player):
-	_attributes = []
+	_attributes = ['strength', 'dexterity', 'stamina', 'manipulation', 'appearance', 'charisma', 'perception', 'intelligence', 'wits']
 	_talents = ['alertness', 'athletics', 'brawl', 'dodge', 'empathy', 'expression', 'intimidate', 'leadership', 'subterfuge', 'tricks']
-	_skills = ['acting', 'animal', 'archery']
-	_knowledge = ['investigation', 'law']
+	_skills = ['acting', 'animal', 'archery', 'craft', 'mounting', 'etiquette', 'melee', 'stealth', 'survival', 'trade']
+	_knowledge = ['investigation', 'law', 'linguistics', 'medecine', 'occult', 'politics', 'seneschal', 'scholarship', 'streetwise', 'theology']
+	_info = ['clan', 'sire', 'generation', 'nature', 'demeanor', 'concept', 'player', 'chronicle', 'haven']
 
-	@property
-	def talents(self): 
-		# build the list of talents and their value, default to 0 
-		ret = [ (talent, getattr(self, talent, 0)) for talent in sorted(self._talents)]
-		#always return 12 talents, appending empty ones ('', 0), suitable for consitent display
-		ret += [('', 0)]*(12-len(ret))
+	def items(self, alist):
+		ret = [ (item, getattr(self, item, 0)) for item in sorted(alist)]
+		#always return 11 items, appending empty ones ('', 0), suitable for consitent display
+		ret += [('', 0)]*(11-len(ret))
 		return ret
 
 	@property
-	def skills(self):
-		ret = [ (skill, getattr(self, skill, 0)) for skill in sorted(self._skills)]
-		ret += [('', 0)]*(12-len(ret))
-		return ret
+	def info(self):
+		return [(info, getattr(self, info, '')) for info in self._info]
 
 	@property
-	def knowledge(self):
-		ret = [ (knowledge, getattr(self, knowledge, 0)) for knowledge in sorted(self._knowledge)]
-		ret += [('', 0)]*(12-len(ret))
-		return ret
+	def physical(self): return [(attr, getattr(self, attr, 1)) for attr in self._attributes[:3]]
+
+	@property
+	def social(self): return [(attr, getattr(self, attr, 1)) for attr in self._attributes[3:6]]
+
+	@property
+	def mental(self): return [(attr, getattr(self, attr, 1)) for attr in self._attributes[6:9]]
+
+	@property
+	def attributes(self): return OrderedDict([('Physical', self.physical), ('Social', self.social), ('mental', self.mental)])
+
+	@property
+	def talents(self): return self.items(self._talents)
+
+	@property
+	def skills(self): return self.items(self._skills)
+
+	@property
+	def knowledge(self): return self.items(self._knowledge)
 
 	@property
 	def abilities(self):
@@ -120,6 +111,19 @@ class Vampire(Player):
 
 if __name__=='__main__':
 	semi = Vampire(u'Semi', 'jmp')
+	
+	# info
+	semi.clan = 'Gangrel'
+	semi.sire = u'Arinbjorn'
+	semi.generation = 9
+	semi.nature = 'Survivant'
+	semi.demeanor = 'Bon vivant'
+	semi.concept = 'Mercenaire'
+	semi.player = 'Sulay'
+	semi.chronicle = 'Orbe Noctis'
+	semi.haven = 'Orbe Noctis'
+
+	# attributes
 	semi.strength = 4
 	semi.dexterity = 5
 	semi.stamina = 3
@@ -139,9 +143,17 @@ if __name__=='__main__':
 
 	# skills
 	semi.acting=1
+	semi.etiquette=1
+	semi.melee=1
+	semi.stealth=3
+	semi.survival=2
+	semi.trade=1
 
 	# knowledge
 	semi.investigation=2
+	semi.linguistics=1
+	semi.medecine=1
+	semi.scholarship=1
 
 	# finally, render the latex code
 	semi.render()
