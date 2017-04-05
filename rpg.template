@@ -197,9 +197,7 @@ Incapacitated & & \kaestchen\\[3ex]
 
 \onecolumn
 
-\chapter{(((player.name)))}
-
-
+\begin{paperbox}{(((player.name|tex)))}
 ((* for chunk in [0,3,6] -*))
 \begin{minipage}{5.5cm}
 ((* for info, value in player.info[chunk:chunk+3] -*))
@@ -209,6 +207,7 @@ Incapacitated & & \kaestchen\\[3ex]
 \end{minipage}
 ((* if not loop.last*))\hfill((*endif*))
 ((*- endfor *))
+\end{paperbox}
 
 \rpgsection{Attributes}
 
