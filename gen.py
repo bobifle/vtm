@@ -68,6 +68,7 @@ class Vampire(Player):
 	_skills = ['acting', 'animal', 'archery', 'craft', 'mounting', 'etiquette', 'melee', 'stealth', 'survival', 'trade']
 	_knowledge = ['investigation', 'law', 'linguistics', 'medecine', 'occult', 'politics', 'seneschal', 'scholarship', 'streetwise', 'theology']
 	_info = ['clan', 'sire', 'generation', 'nature', 'demeanor', 'concept', 'player', 'chronicle', 'haven']
+	_disciplines = sorted(['animalism', 'celerity', 'fortitude', 'protean', 'potence'])
 
 	def items(self, alist):
 		ret = [ (item, getattr(self, item, 0)) for item in sorted(alist)]
@@ -101,12 +102,19 @@ class Vampire(Player):
 	def knowledge(self): return self.items(self._knowledge)
 
 	@property
+	def disciplines(self): return [(item, getattr(self, item)) for item in self._disciplines if hasattr(self, item)]
+
+	@property
 	def abilities(self):
 		ret = OrderedDict()
 		ret['Talents'] = self.talents
 		ret['Skills'] = self.skills
 		ret['Knowledge'] = self.knowledge
 		return ret
+
+	@property
+	def advantages(self):
+		return OrderedDict([('Disciplines', self.disciplines)])
 
 
 if __name__=='__main__':
@@ -154,6 +162,11 @@ if __name__=='__main__':
 	semi.linguistics=1
 	semi.medecine=1
 	semi.scholarship=1
+
+	# discipline
+	semi.protean = 2
+	semi.fortitude = 5
+	semi.potence = 4
 
 	# finally, render the latex code
 	semi.render()

@@ -7,7 +7,7 @@
 \newcounter{circle}
 \newcounter{totcircle}
 
-\def\rpgsection#1{\vspace{1ex}\hline\vspace{-7.8ex}\section{#1}\vspace{-2ex}}
+\def\rpgsection#1{\vspace{1ex}\hline\vspace{-7.5ex}\section{#1}\vspace{-2ex}}
 \newcommandx{\rpgdots}[3]{\setcounter{totcircle}{#2-#1} \parbox{#3}{\Large$\forloop{bullet}{0}{\value{bullet}<#1}{\bullet}\forloop{circle}{0}{\value{circle}<\value{totcircle}}{\circ}$}}
 
 \def\feature#1{\parbox{3.6cm}{#1 \mbox{}\vphantom{Xg}\dotfill\mbox{}}}
@@ -203,7 +203,7 @@ Incapacitated & & \kaestchen\\[3ex]
 ((* for chunk in [0,3,6] -*))
 \begin{minipage}{5.5cm}
 ((* for info, value in player.info[chunk:chunk+3] -*))
-\parbox{5.4cm}{\bf{}(((info))): \vphantom{Xg}(((value)))}
+\parbox{5.4cm}{\bf{}(((info.capitalize()))): \vphantom{Xg}(((value)))}
 ((*- if not loop.last*))\\[0.3ex]((*endif*))
 ((*- endfor *))
 \end{minipage}
@@ -227,6 +227,17 @@ Incapacitated & & \kaestchen\\[3ex]
 \abilities{((( cat )))}{
 ((*for talent, value in abilities-*))
 \feature{((( talent.capitalize() )))}\rpgdots{(((value)))}{6}{1.7cm}
+((*-if not loop.last*))\\((*endif*))
+((*endfor-*))
+}
+((*-endfor*))
+
+\rpgsection{Advantages}
+
+((*for cat, advantages in player.advantages.iteritems()-*))
+\advantages{(((cat)))}{
+((*for advantage, value in advantages-*))
+\feature{(((advantage.capitalize())))}\rpgdots{(((value)))}{6}{1.7cm}
 ((*-if not loop.last*))\\((*endif*))
 ((*endfor-*))
 }
