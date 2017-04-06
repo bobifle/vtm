@@ -13,36 +13,6 @@
 \def\feature#1{\parbox{3.6cm}{#1 \mbox{}\vphantom{Xg}\dotfill\mbox{}}}
 \def\nofeature{\parbox{3.6cm}{\mbox{}\vphantom{Xg}\dotfill\mbox{}}{\rpgdots{0}{6}{1.7cm}}}
 
-\def\attributes#1#2{
-\begin{minipage}{5.5cm}
-\begin{center}{\large\bf #1}\end{center}
-
-\vspace{-2ex}
-#2
-\end{minipage}}
-
-\def\attr#1#2#3{%
-\count@#1
-\newcount\xcount\xcount=#1
-\@for\tmp:=#3\do{%
-\put(\xcount,#2){\framebox(15,9){\tmp}}%
-\advance\xcount18
-}}
-
-\def\titlebox#1#2#3#4#5{
-  \newcount\ycount\ycount#2
-  \newcount\hcount\hcount=10
-  \newcount\wcount\wcount=#3
-  \newcount\downabitcount
-  \downabitcount=#2
-  \advance\downabitcount-1
-  \put(#1,\downabitcount){\setlength\fboxsep{0pt}\colorbox{blue!10}{\makebox(#3,11){}}}%
-  \advance\ycount1
-  \put(#1,\ycount){\makebox(#3,\hcount){\color{black}{\uppercase{#4}}}}
-  \advance\hcount-7
-  \advance\ycount-1
-  \put(#1,\ycount){\makebox(#3,\hcount){\color{black}{\tiny\scshape #5}}}
-}
 
 \def\wnone{\parbox{3.7cm}{{\Large$\circ\circ\circ\circ\circ\circ\circ\circ\circ\,\circ$}\\[-0.3ex]
 \fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}\,\fbox{\phantom{\rule{0.4ex}{0.4ex}}}}}

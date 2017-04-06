@@ -69,11 +69,13 @@ class Vampire(Player):
 	_knowledge = ['investigation', 'law', 'linguistics', 'medecine', 'occult', 'politics', 'seneschal', 'scholarship', 'streetwise', 'theology']
 	_info = ['clan', 'sire', 'generation', 'nature', 'demeanor', 'concept', 'player', 'chronicle', 'haven']
 	_disciplines = sorted(['animalism', 'celerity', 'fortitude', 'protean', 'potence'])
+	_backgrounds = sorted(['status', 'generation_', 'servants', 'resources'])
+	_merits = ['conscience', 'instinct', 'courage']
 
-	def items(self, alist):
+	def items(self, alist, size, empty):
 		ret = [ (item, getattr(self, item, 0)) for item in sorted(alist)]
-		#always return 11 items, appending empty ones ('', 0), suitable for consitent display
-		ret += [('', 0)]*(11-len(ret))
+		#always return size items, appending empty ones ('', 0), suitable for consitent display
+		ret += [('', 0)]*(size-len(ret))
 		return ret
 
 	@property
@@ -93,16 +95,22 @@ class Vampire(Player):
 	def attributes(self): return OrderedDict([('Physical', self.physical), ('Social', self.social), ('mental', self.mental)])
 
 	@property
-	def talents(self): return self.items(self._talents)
+	def talents(self): return self.items(self._talents, 11, ('', 0))
 
 	@property
-	def skills(self): return self.items(self._skills)
+	def skills(self): return self.items(self._skills, 11, ('', 0))
 
 	@property
-	def knowledge(self): return self.items(self._knowledge)
+	def knowledge(self): return self.items(self._knowledge, 11, ('', 0))
 
 	@property
-	def disciplines(self): return [(item, getattr(self, item)) for item in self._disciplines if hasattr(self, item)]
+	def disciplines(self): return self.items(self._disciplines, 6, ('', 0))
+
+	@property
+	def backgrounds(self): return [(i.strip('_'), v ) for i, v in self.items(self._backgrounds, 6, ('', 0))]
+
+	@property
+	def merits(self): return self.items(self._merits, 6, ('', 0))
 
 	@property
 	def abilities(self):
@@ -114,7 +122,7 @@ class Vampire(Player):
 
 	@property
 	def advantages(self):
-		return OrderedDict([('Disciplines', self.disciplines)])
+		return OrderedDict([('Disciplines', self.disciplines), ('Backgrounds', self.backgrounds), ('Merits', self.merits)])
 
 
 if __name__=='__main__':
@@ -167,6 +175,19 @@ if __name__=='__main__':
 	semi.protean = 2
 	semi.fortitude = 5
 	semi.potence = 4
+
+	# backgrounds
+	semi.status = 2
+	semi.generation_ = 2 # different from the actual Vampire generation (see info)
+	semi.servants = 2
+	semi.resources = 2
+
+	# merits
+	semi.conscience = 3
+	semi.instinct = 3
+	semi.courage = 4
+
+	# flaws
 
 	# finally, render the latex code
 	semi.render()
