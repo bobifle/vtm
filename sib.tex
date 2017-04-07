@@ -6,15 +6,7 @@
 %\usepackage[english]{babel}
 \usepackage[francais]{babel}
 \usepackage[most]{tcolorbox}
-
-\backgroundsetup{
-scale=1,
-angle=0,
-opacity=1,
-contents={\begin{tikzpicture}[remember picture,overlay]
- \path [left color = white,middle color = red!30, right color = red] (current page.south west)rectangle (current page.north east);   % Adjust the position of the logo.
-\end{tikzpicture}}
-}
+\usepackage{caption}
 
 \backgroundsetup{
 scale=1,
@@ -29,15 +21,16 @@ contents={\begin{tikzpicture}
 
 \begin{document}
 
-\chapter{test}
+\chapter{Sib Morh Koh Mustafar}
 
+\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{twilek_red.jpg}};
 
 \chapter{Sib Morh Koh Mustafar}
 
 \section{L'enfant de Mustfar}
 
 Née sur la planète rouge, Sib a vécu toute sa jeunesse sur cette planète. Issue d'une famille
-bourgeoise de riches marchands, son père est un ancien militaire décoré sensible à la force.
+bourgeoise, son père est un ancien militaire décoré sensible à la force, reconverti en negociant.
 
 Mais très tôt Sib est repérée comme une utilisatrice de la force, bien plus douée que son père. Elle intègre
 un établissement spécialisé dans la formation de jedi. Ce n'est pas à proprement parlé une académie car elle n'est pas officiellement approuvée par le conseil jedi mais la bordure exterieure jouit d'une certaine autonomie et donc d'une certaine liberté.
@@ -57,15 +50,19 @@ Mais une fois de plus Sib n'en fait qu'a sa tête et se revèle être une pière
 
 \section{Au service de Doku}
 
-Alors qu'elle faisait semblant de travailler, le transport de matière première qu'elle "accompagnait" (elle avait un faible pour l'un des conducteurs) se fait attaquer. Les braconneurs ne s'attendaient probablement pas a faire face a un apprenti jedi, et Sib se montra sans concession, tuant 2 des assaillants et faisant fuir le reste de la bande à elle seule.   
+Alors qu'elle faisait semblant de travailler, le transport de matière première qu'elle "accompagnait" (elle avait un faible pour l'un des conducteurs) se fait attaquer. Les braconneurs ne s'attendaient probablement pas a faire face a un apprenti jedi, et Sib se montra sans concession, tuant deux des assaillants et faisant fuir le reste de la bande à elle seule.   
 
 Un droide de sécurité appartenant au destinataire du convoi fut témoin de la scène. Il en référa à son propriétaire, un certain Maître Doku. Celui-ci contacta la famille de Sid et proposa à son père de terminer sa formation.
-Etrangement Sib accepta sans hesiter, quelque chose la fascinait chez Doku, elle lui trouvait un charisme hors du commun malgré le fait qu'elle ne le connaissait que depuis quelques heures.
+Etrangement Sib accepta sans hesiter, quelque chose la fascinait chez Doku, elle lui trouvait un charisme hors \color{white} du commun malgré le fait qu'elle ne le connaissait que depuis quelques heures.
 
-\section{}
+\section{La séparation}
 Rapidement Doku s'apperçut du potentiel relativement commun de Sib. Cendant il décida de la conserver car elle était extremement dévouée, et utile. Elle acceptait sans rechigner des tâches que certains apprentis Jedi auraient pu discuter...
 
-Cependant l'admiration totalement a sens unique de Sib envers Doku laissa place à de l'amertume. En effet elle se rendi compte avec le temps que Doku ne la considérait pas réellement comme son apprenti. Sa dévotion laissa place à de la rancune. Doku se debarassa donc de Sib en l'assignant à un groupe de mercenaire venu sur [] proteger une negociation importante [hook vers la coterie]
+Cependant l'admiration totalement a sens unique de Sib envers Doku laissa
+place à de l'amertume. En effet elle se rendi compte avec le temps que Doku
+ ne la considérait pas réellement comme son apprenti.
+Sa dévotion laissa place à de la rancune. Soucieux d'eviter un conflit imminent, Doku se debarassa de Sib en
+l'assignant à un groupe de mercenaire venu sur [] proteger une negociation importante [hook vers la coterie]
 
 \begin{commentbox}{Sib en quelques points}
 
@@ -81,8 +78,9 @@ Cependant l'admiration totalement a sens unique de Sib envers Doku laissa place 
 \vspace{2cm}
 
 \begin{figure}
-\hfill\includegraphics[scale=0.4]{mustafar.png}
-\caption{Mustafar, la planète rouge}
+\centering
+\includegraphics[scale=0.4]{mustafar.png}
+\caption*{\color{white}Mustafar, la planète rouge}
 \end{figure}
 
 
