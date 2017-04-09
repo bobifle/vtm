@@ -199,6 +199,7 @@ Incapacitated & & \kaestchen\\[3ex]
 ((*-if not loop.last*))\\((*endif*))
 ((*endfor-*))
 }
+((*if not loop.last*))\hfill((*endif*))
 ((*-endfor*))
 
 \rpgsection{Advantages}
@@ -210,6 +211,7 @@ Incapacitated & & \kaestchen\\[3ex]
 ((*-if not loop.last*))\\((*endif*))
 ((*endfor-*))
 }
+((*if not loop.last*))\hfill((*endif*))
 ((*-endfor*))
 
 \twocolumn
