@@ -71,6 +71,10 @@ class Vampire(Player):
 	_disciplines = sorted(['animalism', 'celerity', 'fortitude', 'protean', 'potence'])
 	_backgrounds = sorted(['status', 'generation_', 'servants', 'resources'])
 	_merits = ['conscience', 'instinct', 'courage']
+	
+	def __init__(self, name, filename):
+		Player.__init__(self, name, filename)
+		self.flaws = {}
 
 	def items(self, alist, size, empty):
 		ret = [ (item, getattr(self, item, 0)) for item in sorted(alist)]
@@ -123,7 +127,6 @@ class Vampire(Player):
 	@property
 	def advantages(self):
 		return OrderedDict([('Disciplines', self.disciplines), ('Backgrounds', self.backgrounds), ('Merits', self.merits)])
-
 
 if __name__=='__main__':
 	semi = Vampire(u'Semi', 'jmp')
@@ -188,6 +191,16 @@ if __name__=='__main__':
 	semi.courage = 4
 
 	# flaws
+	semi.flaws['Lucky'] = 2
+	semi.flaws['Former Ghoul'] = 3
+	semi.flaws['Sans reflet'] = -1
+	semi.flaws['Weak Aura'] = -2
+	semi.flaws[u"Allergie a l'ail"] = -1
+
+	semi.roadName = 'Community'
+	semi.roadValue = 5
+	semi.willpower = 9
+
 
 	# finally, render the latex code
 	semi.render()
