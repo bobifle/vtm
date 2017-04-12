@@ -79,15 +79,6 @@
 #2
 \end{minipage}}
 %
-\def\krempel#1#2#3{
-\begin{minipage}{4cm}
-\parbox{3.8cm}{\bf #1}\\[4ex]
-\parbox{3.8cm}{\bf #2}\\[4ex]
-\parbox{3.8cm}{\bf #3}
-\end{minipage}}
-% 
-% ---------------------------------------------------------------------------
-%
 \def\healthexp#1{
 \begin{minipage}{4.5cm}
 \begin{center}{\large\bf Health}

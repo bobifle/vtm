@@ -44,6 +44,7 @@ class Player(object):
 	def __init__(self, name, filename):
 		self.name = name
 		self.fname=filename
+		self.story = None
 
 	@property
 	def attributes(self): return [attr for attr in self._attributes] # a copy
@@ -57,10 +58,10 @@ class Player(object):
 		player = env.get_template('player.template')
 		# First render the package
 		with open('%s.sty' % self.fname, 'w') as f:
-			f.write(package.render(**self.data))
+			f.write(package.render(**self.data).encode('utf-8'))
 		# then the player tex file
 		with open('%s.tex' % self.fname, 'w') as f:
-			f.write(player.render(**self.data))
+			f.write(player.render(**self.data).encode('utf-8'))
 
 class Vampire(Player):
 	_attributes = ['strength', 'dexterity', 'stamina', 'manipulation', 'appearance', 'charisma', 'perception', 'intelligence', 'wits']
@@ -133,7 +134,7 @@ if __name__=='__main__':
 	
 	# info
 	semi.clan = 'Gangrel'
-	semi.sire = u'Arinbjorn'
+	semi.sire = u'Arinbjörn'
 	semi.generation = 9
 	semi.nature = 'Survivant'
 	semi.demeanor = 'Bon vivant'
@@ -200,6 +201,9 @@ if __name__=='__main__':
 	semi.roadName = 'Community'
 	semi.roadValue = 5
 	semi.willpower = 9
+
+	# additional story file
+	semi.story = 'jmp.story.tex'
 
 
 	# finally, render the latex code

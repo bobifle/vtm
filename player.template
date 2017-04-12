@@ -12,4 +12,6 @@
 
 \charsheet
 
+((*if player.story*))\input{(((player.story)))}((*endif*))
+
 \end{document}
