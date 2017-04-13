@@ -40,6 +40,18 @@ def escape_tex(value):
 		newval = pattern.sub(replacement, newval)
 	return newval
 
+class Item(object):
+	def __init__(self, name, special):
+		self.name = name
+		self.special = special
+
+
+class Weapon(Item):
+	def __init__(self, name, diff, damage, special):
+		Item.__init__(self, name, special)
+		self.diff = diff
+		self.damage = damage
+
 class Player(object):
 	def __init__(self, name, filename):
 		self.name = name
@@ -76,8 +88,12 @@ class Vampire(Player):
 	def __init__(self, name, filename):
 		Player.__init__(self, name, filename)
 		self.flaws = {}
+		self._weapons = []
+		self._armors = []
+		self._items = []
 
-	def items(self, alist, size, empty):
+	# normalize a list to the given size, filling empty spaces with the given "empty" item
+	def norm(self, alist, size, empty):
 		ret = [ (item, getattr(self, item, 0)) for item in sorted(alist)]
 		#always return size items, appending empty ones ('', 0), suitable for consitent display
 		ret += [('', 0)]*(size-len(ret))
@@ -100,22 +116,22 @@ class Vampire(Player):
 	def attributes(self): return OrderedDict([('Physical', self.physical), ('Social', self.social), ('mental', self.mental)])
 
 	@property
-	def talents(self): return self.items(self._talents, 11, ('', 0))
+	def talents(self): return self.norm(self._talents, 11, ('', 0))
 
 	@property
-	def skills(self): return self.items(self._skills, 11, ('', 0))
+	def skills(self): return self.norm(self._skills, 11, ('', 0))
 
 	@property
-	def knowledge(self): return self.items(self._knowledge, 11, ('', 0))
+	def knowledge(self): return self.norm(self._knowledge, 11, ('', 0))
 
 	@property
-	def disciplines(self): return self.items(self._disciplines, 6, ('', 0))
+	def disciplines(self): return self.norm(self._disciplines, 6, ('', 0))
 
 	@property
-	def backgrounds(self): return [(i.strip('_'), v ) for i, v in self.items(self._backgrounds, 6, ('', 0))]
+	def backgrounds(self): return [(i.strip('_'), v ) for i, v in self.norm(self._backgrounds, 6, ('', 0))]
 
 	@property
-	def merits(self): return self.items(self._merits, 6, ('', 0))
+	def merits(self): return self.norm(self._merits, 6, ('', 0))
 
 	@property
 	def abilities(self):
@@ -128,6 +144,19 @@ class Vampire(Player):
 	@property
 	def advantages(self):
 		return OrderedDict([('Disciplines', self.disciplines), ('Backgrounds', self.backgrounds), ('Merits', self.merits)])
+
+	@property
+	def weapons(self): return self._weapons + [Weapon('','','','')]*(len(self._weapons)-5)
+
+	@weapons.setter
+	def weapons(self, value): self._weapons = value
+
+	@property
+	def armors(self): return self._armors + [Item('','')]*(len(self._armors)-3)
+
+	@armors.setter
+	def armors(self, value): self._armors = value
+
 
 if __name__=='__main__':
 	semi = Vampire(u'Semi', 'jmp')
@@ -201,6 +230,16 @@ if __name__=='__main__':
 	semi.roadName = 'Community'
 	semi.roadValue = 5
 	semi.willpower = 9
+
+	# equipment
+	semi.weapons = [
+		Weapon('P. Boucl.', '4', '4(par)', ''),
+		Weapon('Dague', '4', '4(par)', 'un test'),
+	]
+
+	semi.armors = [
+		Item('Cuir Leger', '3L/2C'),
+	]
 
 	# additional story file
 	semi.story = 'jmp.story.tex'

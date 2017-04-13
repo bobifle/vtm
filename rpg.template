@@ -181,5 +181,29 @@ Incapacitated & & \kaestchen\\[3ex]
 \end{paperbox}
 
 \twocolumn
+\chapter{Equipement and Misc}
+
+\header{Weapons}
+\begin{dndtable}[XXXX]
+	\textbf{Weapon}  & \textbf{Diff} & \textbf{Damage} & \textbf{special} \\
+	((* for weapon in player.weapons -*))
+	(((weapon.name))) & (((weapon.diff))) & (((weapon.damage))) & (((weapon.special)))
+	((*-if not loop.last*))\\((*endif*))
+	((*- endfor *))
+\end{dndtable}
+
+\header{Armures}
+\begin{dndtable}[XXXX]
+	\textbf{Armure}  & \textbf{protection} & \textbf{special} \\
+	cuir leger  & 3L/2C & &	
+\end{dndtable}
+
+\header{Autres}
+\begin{dndtable}[X]
+	Une potion 1 niveau aggravé instantané \\	
+	Livre sur la voie de la communauté \\
+	Livre détaillant les griffes de Fenrir (acquis à Barcelone)
+\end{dndtable}
+
 
 } % end of charsheet
