@@ -170,14 +170,16 @@ Incapacitated & & \kaestchen\\[3ex]
 \parbox{3.8cm}{\bf Willpower\\[1ex]
 \rpgdots{(((player.willpower)))}{10}{3.8cm}}\\[-0.1ex]
 \rpgsquares{10}\\[4ex]
-\parbox{3.8cm}{\bf Bloodpool
-\parbox{3.7cm}{\rpgsquares{10}}\\[-0.3ex]
-\rpgsquares{5}
+\parbox{3.8cm}{\bf Bloodpool ( (((-player.blood_turn)))p/t)
+\rpgsquares{(((player.bp(1))))}\\[-0.3ex]
+\rpgsquares{(((player.bp(2))))}\\[-0.3ex]
+\rpgsquares{(((player.bp(3))))}\\[-0.3ex]
+\rpgsquares{(((player.bp(4))))}
 }
 \end{minipage}
 }
 \hfill
-\healthexp{4}
+\healthexp{(((player.exp)))}
 \end{paperbox}
 
 \twocolumn

@@ -57,6 +57,7 @@ class Player(object):
 		self.name = name
 		self.fname=filename
 		self.story = None
+		self.exp = ''
 
 	@property
 	def attributes(self): return [attr for attr in self._attributes] # a copy
@@ -157,6 +158,20 @@ class Vampire(Player):
 	@armors.setter
 	def armors(self, value): self._armors = value
 
+	@property
+	def blood_turn(self):
+		"""Blood Point per turn"""
+		return {9:2, 8:3, 7:4, 6:6, 5:8, 4:10}.get(self.generation, 1)
+
+	@property
+	def blood_pool(self): return {7:20, 6:30, 5:40, 4:50}.get(self.generation,13-self.generation+10)
+
+	# will ease latex code a lot, blood pool is displayed as row of 10 squares
+	def bp(self, row): 
+		if self.blood_pool >= (row*10): return 10
+		if self.blood_pool > (row-1)*10: return self.blood_pool%10
+		return 0
+
 
 if __name__=='__main__':
 	semi = Vampire(u'Semi', 'jmp')
@@ -230,6 +245,9 @@ if __name__=='__main__':
 	semi.roadName = 'Community'
 	semi.roadValue = 5
 	semi.willpower = 9
+
+	# experience
+	semi.exp = '4 (1 mat)'
 
 	# equipment
 	semi.weapons = [
