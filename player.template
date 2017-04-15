@@ -13,7 +13,7 @@
 %\thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay]
 \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{semi.jpeg}};
-\draw (current page.center) node [fill=blue!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Sémi\\[15pt] % Book title
+\draw (current page.center) node [fill=yellow!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Sémi\\[15pt] % Book title
 {\Large L'instinct de survie est dispensateur de talent}}};
 \end{tikzpicture}
 
