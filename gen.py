@@ -20,7 +20,7 @@ _log = logging.getLogger(__name__)
 # return a latex compatible jinja2 syntax
 # basically replace { } by ()
 def getEnv():
-	env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
+	env = jinja2.Environment(loader=jinja2.FileSystemLoader('.', encoding='utf-8'))
 	env.block_start_string  = '((*'
 	env.block_end_string = '*))'
 	env.variable_start_string  = '((('

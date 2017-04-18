@@ -185,6 +185,7 @@ Incapacitated & & \kaestchen\\[3ex]
 \twocolumn
 \chapter{Equipement and Misc}
 
+\rpgsection{Equipment}
 \header{Weapons}
 \begin{dndtable}[XXXX]
 	\textbf{Weapon}  & \textbf{Diff} & \textbf{Damage} & \textbf{special} \\
@@ -205,6 +206,16 @@ Incapacitated & & \kaestchen\\[3ex]
 	Une potion 1 niveau aggravé instantané \\	
 	Livre sur la voie de la communauté \\
 	Livre détaillant les griffes de Fenrir (acquis à Barcelone)
+\end{dndtable}
+
+\rpgsection{Quick rolls}
+
+\header{Attack}
+\begin{dndtable}[8pt][XXXX]
+	\textbf{Type}  & \textbf{Hit} & \textbf{Damage} & \textbf{special} \\
+	Griffes & (((player.dexterity+player.brawl))) (D+brawl) & (((player.strength+1))) (S+1) & aggravated damage \\
+	Melee   & (((player.dexterity+player.melee))) (D+melee) & (((player.strength+4))) (S+4) & Lethal damage \\
+
 \end{dndtable}
 
 
