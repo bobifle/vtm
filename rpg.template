@@ -182,7 +182,6 @@ Incapacitated & & \kaestchen\\[3ex]
 \healthexp{(((player.exp)))}
 \end{paperbox}
 
-\twocolumn
 \chapter{Equipement and Misc}
 
 \rpgsection{Equipment}
@@ -211,12 +210,11 @@ Incapacitated & & \kaestchen\\[3ex]
 \rpgsection{Quick rolls}
 
 \header{Attack}
-\begin{dndtable}[8pt][XXXX]
+\begin{dndtable}[XXXX]
 	\textbf{Type}  & \textbf{Hit} & \textbf{Damage} & \textbf{special} \\
-	Griffes & (((player.dexterity+player.brawl))) (D+brawl) & (((player.strength+1))) (S+1) & aggravated damage \\
-	Melee   & (((player.dexterity+player.melee))) (D+melee) & (((player.strength+4))) (S+4) & Lethal damage \\
+	Griffes & (((player.dexterity+player.brawl)))d (dex+brawl) & (((player.strength+1)))d (str+1) [+(((player.potence)))] & aggravated damage \\
+	Melee   & (((player.dexterity+player.melee)))d (dex+melee) & (((player.strength+4)))d (str+4) [+(((player.potence)))] & lethal damage \\
 
 \end{dndtable}
-
 
 } % end of charsheet

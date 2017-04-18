@@ -85,7 +85,7 @@ class Vampire(Player):
 	_disciplines = sorted(['animalism', 'celerity', 'fortitude', 'protean', 'potence'])
 	_backgrounds = sorted(['status', 'generation_', 'servants', 'resources'])
 	_merits = ['conscience', 'instinct', 'courage']
-	
+
 	def __init__(self, name, filename):
 		Player.__init__(self, name, filename)
 		self.flaws = {}
