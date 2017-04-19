@@ -209,12 +209,23 @@ Incapacitated & & \kaestchen\\[3ex]
 
 \rpgsection{Quick rolls}
 
-\header{Attack}
+\header{Combat}
 \begin{dndtable}[XXXX]
-	\textbf{Type}  & \textbf{Hit} & \textbf{Damage} & \textbf{special} \\
-	Griffes & (((player.dexterity+player.brawl)))d (dex+brawl) & (((player.strength+1)))d (str+1) [+(((player.potence)))] & aggravated damage \\
+	\textbf{Type}  & \textbf{Hit/cost} & \textbf{Damage} & \textbf{special} \\
+	Griffes & (((player.dexterity+player.brawl)))d (dex+brawl) & \textbf{(((player.strength+1)))d (str+1) [+(((player.potence)))]} & aggravated damage \\
 	Melee   & (((player.dexterity+player.melee)))d (dex+melee) & (((player.strength+4)))d (str+4) [+(((player.potence)))] & lethal damage \\
-
+	Dodge   & (((player.dexterity+player.dodge)))d & & \\
+	Stealth & (((player.dexterity+player.stealth)))d & & \\
+	Perception Alert. & (((player.perception+player.alertness)))d & &  ((*if player.protean *))Eyes of the beast((*endif*))\\
 \end{dndtable}
+
+\header{Disciplines}
+\begin{dndtable}[XXXX]
+	\textbf{Type}  & \textbf{Hit/cost} & \textbf{special} \\
+	((* for power in player.powers -*))
+	(((power.name.capitalize() ))) & (((power.cost))) & (((power.diff))) (((power.special)))\\
+	((*- endfor *))
+\end{dndtable}
+
 
 } % end of charsheet
