@@ -209,6 +209,10 @@ Incapacitated & & \kaestchen\\[3ex]
 
 \rpgsection{Quick rolls}
 
+\def\scorebox{\raisebox{-0.1cm}{\framebox(20, 13){}} }
+
+Temporary bonus: \hfill Strength = \scorebox \hfill Dexterity = \scorebox \hfill Stamina = \scorebox          
+
 \header{Combat}
 \begin{dndtable}[XXXX]
 	\textbf{Type}  & \textbf{Hit/cost} & \textbf{Damage} & \textbf{special} \\
