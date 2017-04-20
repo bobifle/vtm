@@ -82,7 +82,7 @@ class Vampire(Player):
 	_skills = ['acting', 'animal', 'archery', 'craft', 'mounting', 'etiquette', 'melee', 'stealth', 'survival', 'trade']
 	_knowledge = ['investigation', 'law', 'linguistics', 'medecine', 'occult', 'politics', 'seneschal', 'scholarship', 'streetwise', 'theology']
 	_info = ['clan', 'sire', 'generation', 'nature', 'demeanor', 'concept', 'player', 'chronicle', 'haven']
-	_disciplines = sorted(['animalism', 'celerity', 'fortitude', 'protean', 'potence'])
+	_disciplines = sorted(['animalism', 'celerity', 'fortitude', 'protean', 'potence', 'presence'])
 	_backgrounds = sorted(['status', 'generation_', 'servants', 'resources'])
 	_merits = ['conscience', 'instinct', 'courage']
 
@@ -162,7 +162,9 @@ class Vampire(Player):
 	def powers(self):
 		powers = []
 		for discipline, _ in self.disciplines: 
-			if discipline: powers.extend(disc[discipline].powers(self))
+			# add the scipline powers to the list
+			# if the discpline is not described, add an Empty one
+			if discipline: powers.extend(disc.get(discipline, DEmpty(discipline)).powers(self))
 		return powers
 
 	@property
@@ -179,19 +181,32 @@ class Vampire(Player):
 		if self.blood_pool > (row-1)*10: return self.blood_pool%10
 		return 0
 
+# TODO use a class ?
+Power = namedtuple('Power', ['name', 'level', 'dices', 'cost', 'diff', 'special'])
+
+class Power(object):
+	def __init__(self, name, level, dices, cost, diff, special):
+		self.name = name; self.level = level ; self.dices = dices
+		self.cost = cost; self.diff = diff ; self.special = special
+		self.disc = None
+
 class Discipline(object):
 	def __init__(self, name, powers):
 		self.name = name
 		self._powers = powers
+		for p in self._powers: p.disc = self
 
 	def powers(self, player):
 		return [p for p in self._powers if p.level <= getattr(player, self.name, 0)]
 
-Power = namedtuple('Power', ['name', 'level', 'dices', 'cost', 'diff', 'special'])
+class DEmpty(Discipline):
+	def __init__(self, name):
+		Discipline.__init__(self, name, [Power(name, 1, [], '', '', 'unkown implement me')])
+
 disc = {}
 disc['protean'] = Discipline('protean', [
-		Power('Eyes of the beast', 1, [], '1 blood point', '', 'can see in the dark'),
-		Power('Feral Claw', 2, [], '1 blood point, 1 turn', '', 'claws do str +1 aggravated damage'),
+		Power('Eyes of the beast', 1, [], '1 bp', '', 'can see in the dark'),
+		Power('Feral Claw', 2, [], '1 bp, 1 turn', '', 'claws do str +1 aggravated damage'),
 		Power('Earth Meld', 3, [], '', '', 'Melt into the earth to hide and rest'),
 		Power('Shape of the Beast', 4, [], '', '', 'Transform into a specific animal'),
 		Power('Mist Form', 5, [], '', '', 'Transform into a Mist'),
@@ -201,7 +216,7 @@ disc['animalism'] = Discipline('animalism', [
 	])
 
 disc['celerity'] = Discipline('celerity', [
-	Power('celerity', 1, [], '1 blood point per actions', '', 'Add an action in the turn'),
+	Power('celerity', 1, [], '1 bp per actions', '', 'Add an action in the turn'),
 	])
 
 disc['fortitude'] = Discipline('fortitude', [

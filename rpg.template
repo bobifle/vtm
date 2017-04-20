@@ -225,9 +225,9 @@ Temporary bonus: \hfill Strength = \scorebox \hfill Dexterity = \scorebox \hfill
 
 \header{Disciplines}
 \begin{dndtable}[XXXX]
-	\textbf{Type}  & \textbf{Hit/cost} & \textbf{special} \\
+	\textbf{Type}  & \textbf{special} \\
 	((* for power in player.powers -*))
-	(((power.name.capitalize() ))) & (((power.cost))) & (((power.diff))) (((power.special)))\\
+	(((power.disc.name))) (((power.level))) (((power.name.capitalize()))) & (((power.cost))) (((power.diff))) (((power.special)))\\
 	((*- endfor *))
 \end{dndtable}
 
