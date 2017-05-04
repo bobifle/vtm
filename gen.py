@@ -197,7 +197,12 @@ class Discipline(object):
 		for p in self._powers: p.disc = self
 
 	def powers(self, player):
-		return [p for p in self._powers if p.level <= getattr(player, self.name, 0)]
+		pow =  [p for p in self._powers if p.level <= getattr(player, self.name, 0)]
+		if len(pow) == 1:
+			# discipline with only one power like potence have actually as many power as the player
+			# score in the discipline
+			pow[0].level = getattr(player, self.name, 1)
+		return pow
 
 class DEmpty(Discipline):
 	def __init__(self, name):
@@ -216,15 +221,15 @@ disc['animalism'] = Discipline('animalism', [
 	])
 
 disc['celerity'] = Discipline('celerity', [
-	Power('celerity', 1, [], '1 bp per actions', '', 'Add an action in the turn'),
+	Power('', 1, [], '1 bp per actions', '', 'Add an action in the turn'),
 	])
 
 disc['fortitude'] = Discipline('fortitude', [
-	Power('fortitude', 1, [], '1 bp for auto succes', '', ''),
+	Power('', 1, [], '1 bp for auto succes', '', ''),
 	])
 
 disc['potence'] = Discipline('potence', [
-	Power('potence', 1, [], '1 bp for auto succes', '', ''),
+	Power('', 1, [], '1 bp for auto succes', '', ''),
 	])
 
 if __name__=='__main__':
@@ -274,7 +279,7 @@ if __name__=='__main__':
 	semi.scholarship=1
 
 	# discipline
-	semi.protean = 5
+	semi.protean = 2
 	semi.fortitude = 5
 	semi.potence = 4
 
