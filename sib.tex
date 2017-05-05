@@ -5,31 +5,23 @@
 \usepackage[bg-a4]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 %\usepackage[english]{babel}
 \usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage[most]{tcolorbox}
 \usepackage{caption}
 
-\backgroundsetup{
-scale=1,
-angle=0,
-opacity=1,
-contents={\begin{tikzpicture}
-\path (0,0) rectangle (\paperwidth,\paperheight);
-\node[scope fading=west,inner sep=0pt,outer sep=0pt,anchor=north east] at(\paperwidth,\paperheight) {\includegraphics[height=\paperheight]{twilek_red.jpg}};
-\end{tikzpicture}}
-}
-
-
 \begin{document}
 
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{twilek_red.jpg}};
+\draw (current page.center) node [fill=yellow!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Sib\\[15pt] % Book title
+{\Large Celui qui sait obéir saura ensuite commander.}}};
+\end{tikzpicture}
+
 \chapter{Sib Morh Koh Mustafar}
 
-\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{twilek_red.jpg}};
+\section{L'enfant de Mustafar}
 
-\chapter{Sib Morh Koh Mustafar}
-
-\section{L'enfant de Mustfar}
-
-Née sur la planète rouge, Sib a vécu toute sa jeunesse sur cette planète. Issue d'une famille
+Née sur la planète rouge, Sib y a vécu toute sa jeunesse. Issue d'une famille
 bourgeoise, son père est un ancien militaire décoré sensible à la force, reconverti en negociant.
 
 Mais très tôt Sib est repérée comme une utilisatrice de la force, bien plus douée que son père. Elle intègre
@@ -53,7 +45,7 @@ Mais une fois de plus Sib n'en fait qu'a sa tête et se revèle être une pière
 Alors qu'elle faisait semblant de travailler, le transport de matière première qu'elle "accompagnait" (elle avait un faible pour l'un des conducteurs) se fait attaquer. Les braconneurs ne s'attendaient probablement pas a faire face a un apprenti jedi, et Sib se montra sans concession, tuant deux des assaillants et faisant fuir le reste de la bande à elle seule.   
 
 Un droide de sécurité appartenant au destinataire du convoi fut témoin de la scène. Il en référa à son propriétaire, un certain Maître Doku. Celui-ci contacta la famille de Sid et proposa à son père de terminer sa formation.
-Etrangement Sib accepta sans hesiter, quelque chose la fascinait chez Doku, elle lui trouvait un charisme hors \color{white} du commun malgré le fait qu'elle ne le connaissait que depuis quelques heures.
+Etrangement Sib accepta sans hesiter, quelque chose la fascinait chez Doku, elle lui trouvait un charisme hors du commun malgré le fait qu'elle ne le connaissait que depuis quelques heures.
 
 \section{La séparation}
 Rapidement Doku s'apperçut du potentiel relativement commun de Sib. Cendant il décida de la conserver car elle était extremement dévouée, et utile. Elle acceptait sans rechigner des tâches que certains apprentis Jedi auraient pu discuter...
@@ -80,10 +72,8 @@ l'assignant à un groupe de mercenaire venu sur Eriadu proteger une negociation 
 \begin{figure}
 \centering
 \includegraphics[scale=0.4]{mustafar.png}
-\caption*{\color{white}Mustafar, la planète rouge}
+\caption*{Mustafar, la planète rouge}
 \end{figure}
-
-\color{black}
 
 \chapter{Chroniques}
 
@@ -102,7 +92,7 @@ contents={
 
 \section{Echec des négotiations}
 
-Apres l'attentat des négotiations pour la taxation des routes commerciales, Dooku m'a conseillée de me mettre au service de Damask, qui part pour une planète Benta. Je questionne Dooku et lui implore de me garder avec lui. Mais le divorce est consommé, il ne veut plus de moi, et moi je me rends compte qu'il ne me considère plus.
+Apres l'attentat des négotiations pour la taxation des routes commerciales, Dooku m'a conseillée de me mettre au service de Damask, qui part pour la planète Bentha. Je questionne Dooku et l'implore de me garder avec lui. Mais le divorce est consommé, il ne veut plus de moi, et moi je me rends compte qu'il ne me considère plus.
 
 Alors j'accepte la proposition. En cadeau d'adieu il me donne un holocron. un artefact religieux censé m'apporter des connaissances.
 
@@ -113,10 +103,14 @@ carte galactique.
 
 \section{En route pour Bentha} 
 
-J'ai finalement reussi a ouvrir l'artefact. C'est un holocron Sith contenant une foultitude d'informations Sith, probablement écrites par les Sith. Les enseignements sont tres différents des Jedi.
+J'ai finalement reussi a ouvrir l'artefact. C'est un holocron Sith contenant
+une grande quantité d'informations liée aux Sith, probablement écrites par les Sith.
+Les enseignements sont tres différents de ceux des Jedi.
 Je suis troublée, car il semble que la vérité se trouve ni chez les Sith, et malheureseument, ni chez les Jedi.
 
-Arrivés sur la planète, hostile, Damask nous stationne au camp pendant qu'il part en expedition. Pendant notre séjour, d'enormes eclairs de force rugissent la nuit. Le malaise de chacun est palpable.
+Arrivés sur la planète, hostile, Damask nous stationons au camp pendant que Damask
+et Palpatine partent en "expedition", nous n'en sauront pas plus pour le moment.
+Pendant notre séjour, d'enormes eclairs de force rugissent la nuit. Le malaise de chacun est palpable.
 
 \section{L'exploration de la mine}
 
@@ -125,10 +119,10 @@ d'y trouver Damask et Palpatine. Sur le chamin nous rentrons trois bêtes féroc
 des nexus, j'ai eu beaucoup de mal a me defendre contre leurs attaques a répétitions,
 mais je ne m'attendais a ce que Chavez et Dash face un carton sur les bestiaux.
 
-Malgré l'incident nous arrivons à la mine. Le coté obscure y est très puissant. 
+Malgré l'incident nous arrivons à destination. Le coté obscure y est très puissant. 
 Chavez et Dash sont pris de frissons et d'angoisse. Nous avancons jusqu'a tomber
-sur une grande piece vide. Le coté obscure y est très oppressant. En récitant
-le code Sith, je decelle un cristal rouge, caché sous une pierre du mur.
+sur une grande pièce vide. Le coté obscure y est très oppressant. En récitant
+le code Sith, je decèle un cristal rouge, caché sous une pierre du mur.
 
 \begin{quotebox}
 Sib récupère un cristal rouge Sith avec lequel elle pourra construire un sabre
@@ -137,6 +131,14 @@ laser.
 
 Cependant nous n'arrivons pas a déplacer ou ouvrir un pan du mur.
 Les traces de Damask et Palpatine sont pourtant là et prouvent que eux sont passés. 
+Nous somme sur le point d'abandonner et faire demi tour quand finalement le mur se dérobe
+et sortent Damask et Palpatine. Ce dernier a le visage ensanglanté mais très étrangement
+ne semblke ni choqué ni dérange, il a même l'air plutôt heureux et satisfait.
+Quant a Damask, il porte un large objet dans ces bras recouvert par un drap. Il fera tout
+un mystère de cet objet mais je suis sure que c'est un artefact Sith. Décidément mes premières
+impressions sont les bonnes, Damask et Palpatine ne m'ont pas l'air tout à fait clairs.
+
+Affair à suivre...
 
 \begin{paperbox}{Un choix difficile}
 Sib doit faire face à un choix cornélien, quitter l'ordre Jedi et suivre sont propre
