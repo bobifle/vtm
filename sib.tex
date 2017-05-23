@@ -3,9 +3,14 @@
 \let\oldhline\hline
 
 \usepackage[bg-a4]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
-%\usepackage[english]{babel}
-\usepackage[francais]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage{ifxetex}
+
+\ifxetex
+	\usepackage{fontspec}
+\else
+	\usepackage[francais]{babel}
+	\usepackage[utf8]{inputenc}
+\fi
 \usepackage[most]{tcolorbox}
 \usepackage{caption}
 
