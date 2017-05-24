@@ -23,13 +23,13 @@
 \RequirePackage[most]{tcolorbox}  % used for some boxes
 
 % Load other modules of this package
-\usepackage{lib/dndmonster}
-\usepackage{lib/dndsections}
-\usepackage{lib/dndcomment}
-\usepackage{lib/dnditemtable}
-\usepackage{lib/dndtable}
-\usepackage{lib/dndquote}
-\usepackage{lib/dndpaperbox}
+\usepackage{dndmonster}
+\usepackage{dndsections}
+\usepackage{dndcomment}
+\usepackage{dnditemtable}
+\usepackage{dndtable}
+\usepackage{dndquote}
+\usepackage{dndpaperbox}
 
 
 %
@@ -54,15 +54,15 @@
   % Determine background image
   \iftoggle{bool-bg-a4}{%		% Check if A4 option is selected
     \iftoggle{bool-bg-print}{%	% Check if print option is selected
-      \RequirePackage[a4,print]{lib/dndbackgroundimg}
+      \RequirePackage[a4,print]{dndbackgroundimg}
 		}{%
-      \RequirePackage[a4,full]{lib/dndbackgroundimg}
+      \RequirePackage[a4,full]{dndbackgroundimg}
 		}
 	}{%
     \iftoggle{bool-bg-print}{%	% Check if print option is selected
-      \RequirePackage[letter,print]{lib/dndbackgroundimg}
+      \RequirePackage[letter,print]{dndbackgroundimg}
 		}{%
-      \RequirePackage[letter,full]{lib/dndbackgroundimg}
+      \RequirePackage[letter,full]{dndbackgroundimg}
 		}
 	}
 }
