@@ -11,6 +11,9 @@ env['ENV']['PYTHONPATH'] =  os.path.join(Dir('.').abspath, 'lib')
 # before setting the VariantDir 
 texlib = list(Glob('texlib/*'))
 
+# img src
+imgSrc = list(Glob('src/*/*.jpg')) + list(Glob('src/*/*.png'))
+
 # copy all sources into the build directory
 VariantDir(build, src)
 
@@ -27,7 +30,7 @@ for py in pyFiles:
 texFiles = (f for f in Glob(build+'/**/*.tex') if "story" not in f.tpath)
 
 for t in texFiles:
-	pdf = env.PDF(os.path.splitext(t.path)[0]+'.pdf', source=t.path)
+	pdf = env.PDF(os.path.splitext(t.path)[0]+'.pdf', source=[t.path] + [img.path for img in imgSrc if t.path in imgSrc])
 	env.AddPostAction(pdf, action = AlwaysBuild(env.Command(os.path.splitext(t.path)[0]+'.pdf', source=t.path, action = "cd %s; xelatex %s" % (t.path_elements[-2].path, t.name))))
 	for tlib in texlib:
 		target, source = os.path.join(t.path_elements[-2].path, tlib.name), tlib.path
