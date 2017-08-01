@@ -5,7 +5,7 @@ build = 'build'
 src = 'src'
 
 # that's the environment
-env = Environment()
+env = Environment(ENV={'PATH': os.environ['PATH']+r';C:\texlive\2016\bin\win32'}) if Platform().name == 'win32' else Environment()
 env['ENV']['PYTHONPATH'] =  os.path.join(Dir('.').abspath, 'lib')
 
 # before setting the VariantDir 
