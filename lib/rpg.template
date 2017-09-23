@@ -197,15 +197,28 @@ Incapacitated & & \kaestchen\\[3ex]
 \header{Armures}
 \begin{dndtable}[XXXX]
 	\textbf{Armure}  & \textbf{protection} & \textbf{special} \\
-	cuir leger  & 3L/2C & &	
+	cuir composite  & +3 & -1 dex &	
 \end{dndtable}
 
 \header{Autres}
 \begin{dndtable}[X]
 	Une potion 1 niveau aggravé instantané \\	
+	Une potion 2 niveaux aggravés instantanés \\	
 	Livre sur la voie de la communauté \\
-	Livre détaillant les griffes de Fenrir (acquis à Barcelone)
+	Livre détaillant les griffes de Fenrir (acquis à Barcelone) \\
+	1 scroll qui permet d'apprendre "Measure the will" p170 High Clan
 \end{dndtable}
+
+\rpgsection{Languages and Status}
+
+\begin{dndtable}[XX]
+	\textbf{Language} & \textbf{Status}\\
+	Provencal & ennemi with Bertrand Ostek\\
+	Hongrois \\
+	Anglais \\
+	Latin \\
+\end{dndtable}
+
 
 \rpgsection{Quick rolls}
 

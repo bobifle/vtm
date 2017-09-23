@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
+print os.environ['PYTHONPATH']
+
 from rpg import Vampire, Weapon, Item
 
 if __name__=='__main__':
-	semi = Vampire(u'Semi', 'semi')
+	semi = Vampire(u"Baneret Semi d'Avilla", 'semi')
 	
 	# info
 	semi.clan = 'Gangrel'
@@ -45,13 +48,15 @@ if __name__=='__main__':
 
 	# knowledge
 	semi.investigation=2
-	semi.linguistics=1
-	semi.medecine=1
-	semi.scholarship=1
+	semi.medecine=2
+	semi.occult=3
+	semi.politics=1
+	semi.scholarship=2
+	semi.seneschal=1
 
 	# discipline
-	semi.protean = 2
-	semi.fortitude = 5
+	semi.protean = 3
+	semi.fortitude = 6
 	semi.potence = 4
 
 	# backgrounds
@@ -68,6 +73,7 @@ if __name__=='__main__':
 	# flaws
 	semi.flaws['Lucky'] = 2
 	semi.flaws['Former Ghoul'] = 3
+	semi.flaws[u"Multilingual"] = 2
 	semi.flaws['Sans reflet'] = -1
 	semi.flaws['Weak Aura'] = -2
 	semi.flaws[u"Allergie a l'ail"] = -1
@@ -77,16 +83,16 @@ if __name__=='__main__':
 	semi.willpower = 9
 
 	# experience
-	semi.exp = '4 (1 mat)'
+	semi.exp = '5 (2 mat)'
 
 	# equipment
 	semi.weapons = [
 		Weapon('P. Boucl.', '4', '4(par)', ''),
-		Weapon('Dague', '4', '4(par)', 'un test'),
+		Weapon('Dague', '4', '4(par)', ''),
 	]
 
 	semi.armors = [
-		Item('Cuir Leger', '3L/2C'),
+		Item('Cuir composite', '3'),
 	]
 
 	# additional story file

@@ -11,6 +11,8 @@ env['ENV']['PYTHONPATH'] =  os.path.join(Dir('.').abspath, 'lib')
 # before setting the VariantDir 
 texlib = list(Glob('texlib/*'))
 
+lib = list(Glob('lib/*'))
+
 # img src
 #imgSrc = list(Glob('src/*/*.jpg')) + list(Glob('src/*/*.png'))
 

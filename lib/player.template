@@ -2,7 +2,7 @@
 % we'll need the old hline later
 \let\oldhline\hline
 
-\usepackage[bg-a4]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
+\usepackage[bg-print]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage{(((player.fname)))}
 \usepackage[most]{tcolorbox}
 \usepackage{ifxetex}
